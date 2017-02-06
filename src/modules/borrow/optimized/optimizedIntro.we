@@ -1,0 +1,23 @@
+<template>
+    <scroll class="wrapper">
+        <div class="title"><text class="icon-title"></text><text>什么是优选保利？</text></div>
+        <text class="rules">优选保利是华联保利网推出的自动分散投资和自动转让退出的投资计划，华联保利网对借款项目的资产保障严格审核，为投资人进行分散投资和定期赎回，提高小额分散投资的效率，满足投资人多样化的理财需求。该产品适用于华联保利网风险金保障计划。</text>
+        <div class="title"><text class="icon-title"></text><text>优选保利安全吗？</text></div>
+        <text class="rules">华联保利网对每笔借款进行严格审核筛选，并适用于华联保利网风险保障金计划。</text>
+        <div class="title"><text class="icon-title"></text><text>优选保利的收益有多少？</text></div>
+        <div class="rules">
+            <text>优选保利分为四种:</text>
+            <text>优选月保利1个月，预期年收益7.5%;</text>
+            <text>优选月保利3个月，预期年收益8.5%;</text>
+            <text>优选月保利6个月，预期年收益9.5%;</text>
+            <text>优选月保利12个月，预期年收益13.5%。</text>
+        </div>
+        <div class="title"><text class="icon-title"></text><text>优选保利到期后，如何退出并实现收益？</text></div>
+        <text class="rules">优选保利到期后，系统会在3个工作日内自动将本金和收益返还至投资者账户中</text>
+        <div class="title"><text class="icon-title"></text><text>优选保利有什么优势？</text></div>
+        <div class="rules"></div>
+    </scroll>
+</template>
+<style>
+    .wrapper { width: 750px; }
+</style>

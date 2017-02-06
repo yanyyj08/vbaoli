@@ -1,0 +1,58 @@
+<template>
+    <div class="wrapper">
+        <div>
+            <vbaoli-tab tab-items="{{tabItems}}"></vbaoli-tab>
+        </div>
+    </div>
+</template>
+<style>
+.wrapper { width: 750px; }
+</style>
+<script>
+require('weex-components');
+require('../../../include/vbaoli-tab.we');
+var apis = require('../../../common/api');
+module.exports = {
+    data: {
+        dir: 'dist',
+        baseUrl: '',
+        tabItems: [{
+            index: 0,
+            title: '优选保利介绍',
+            icon: '',
+            src: 'modules/borrow/optimized/optimizedIntro.js',
+            titleColor: '',
+            visibility: 'visible',
+        }, {
+            index: 1,
+            title: '项目详情',
+            icon: '',
+            src: 'modules/borrow/optimized/optimizedInfo.js',
+            titleColor: '',
+            visibility: 'hidden',
+        }, {
+            index: 2,
+            title: '加入记录',
+            icon: '',
+            src: 'modules/borrow/optimized/optimizedJoin.js',
+            titleColor: '',
+            visibility: 'hidden',
+        }, {
+            index: 3,
+            title: '常见问题',
+            icon: '',
+            src: 'modules/borrow/optimized/optimizedQ.js',
+            titleColor: '',
+            visibility: 'hidden',
+        }]
+    },
+    created: function() {
+        var bundleUrl = this.$getConfig().bundleUrl;
+        this.baseUrl = apis.getBaseUrl(bundleUrl);
+        for (var i = 0; i < this.tabItems.length; i++) {
+            var tabItem = this.tabItems[i];
+            tabItem.src = this.baseUrl + tabItem.src;
+        }
+    },
+}
+</script>

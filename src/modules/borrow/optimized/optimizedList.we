@@ -1,0 +1,31 @@
+<template>
+    <div class="content">
+        <product-list product-item="{{productItem}}"></product-list>
+    </div>
+</template>
+
+<style>
+.content { position:absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; }
+</style>
+<script>
+require('weex-components');
+require('../../../include/product-list.we');
+
+module.exports = {
+    data: {
+        productItem: [
+            { isNew: true, title: '吧啦吧啦时尚1', percent: 8, month: 1, productProgress: 56, paymentMethod: '一次结清' },
+            { isNew: true, title: '吧啦吧啦时尚2', percent: 8, month: 1, productProgress: 56, paymentMethod: '一次结清' },
+            { isNew: true, title: '吧啦吧啦时尚3', percent: 8, month: 1, productProgress: 56, paymentMethod: '一次结清' },
+            { isNew: true, title: '吧啦吧啦时尚4', percent: 8, month: 1, productProgress: 56, paymentMethod: '一次结清' },
+            { isNew: true, title: '吧啦吧啦时尚5', percent: 8, month: 1, productProgress: 56, paymentMethod: '一次结清' },
+            { isNew: true, title: '吧啦吧啦时尚6', percent: 8, month: 1, productProgress: 56, paymentMethod: '一次结清' },
+            { isNew: true, title: '吧啦吧啦时尚7', percent: 8, month: 1, productProgress: 56, paymentMethod: '一次结清' },
+            { isNew: true, title: '吧啦吧啦时尚8', percent: 8, month: 1, productProgress: 56, paymentMethod: '一次结清' },
+            { isNew: true, title: '吧啦吧啦时尚9', percent: 8, month: 1, productProgress: 56, paymentMethod: '一次结清' },
+            { isNew: false, title: '嘻嘻哈哈', percent: 30, month: 1, productProgress: 12, paymentMethod: '一次结清' },
+            { isNew: false, title: '恍恍惚惚', percent: 30, month: 12, productProgress: 0, paymentMethod: '一次结清' },
+        ]
+    }
+}
+</script>

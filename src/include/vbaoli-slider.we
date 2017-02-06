@@ -1,0 +1,50 @@
+<template>
+  <div>
+    <slider class="slider" interval="3000" auto-play="true">
+      <div class="slider-pages" repeat="item in sliderList">
+        <image class="img" src="{{item.pictureUrl}}"></image>
+      </div>
+      <!--<indicator class="indicator"></indicator>-->
+    </slider>
+    div
+  </div>
+</template>
+
+<style>
+  .img {
+    width: 750px;
+    height: 420px;
+  }
+  .slider {
+    flex-direction: row;
+    width: 750px;
+    height: 420px;
+  }
+  .slider-pages {
+    flex-direction: row;
+    width: 750px;
+    height: 420px;
+  }
+  /*.indicator {*/
+    /*width:750px;*/
+    /*height:420px;*/
+    /*position:absolute;*/
+    /*top:1px;*/
+    /*left:1px;*/
+    /*item-color: red;*/
+    /*item-selectedColor: blue;*/
+    /*item-size: 20;*/
+  /*}*/
+</style>
+
+<script>
+  module.exports = {
+    data: {
+      sliderList: [
+        {itemId: '520421163634', pictureUrl: './images/slider01.png'},
+        {itemId: '522076777462', pictureUrl: './images/slider02.png'},
+        {itemId: '522076777462', pictureUrl: './images/slider03.png'}
+      ]
+    }
+  }
+</script>

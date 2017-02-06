@@ -1,0 +1,50 @@
+<template>
+    <div class="content wrapper">
+        <div id="tab" class="tab-bar" append="tree">
+            <vbaoli-tab-item repeat={{tabItems}} index={{index}} title={{title}} title-color={{titleColor}}></vbaoli-tab-item>
+        </div>
+        <div class="content" style="visibility:{{visibility}}" repeat={{tabItems}}>
+            <embed src="{{src}}" type="weex"></embed>
+        </div>
+    </div>
+</template>
+<style>
+.wrapper { top: 0; }
+.tab-bar { flex-direction: row; height: 74px; background-color: #fff; }
+.content { position: absolute; top: 74px; left: 0; right: 0; bottom: 0; margin-bottom: 0; }
+</style>
+<script>
+var dom = require('@weex-module/dom');
+require('weex-components');
+module.exports = {
+    data: {
+        tabItems: [],
+        selectedIndex: 0,
+        selectedColor: '#ff9125',
+        unselectedColor: '#979797',
+    },
+    created: function() {
+        this.selected(this.selectedIndex);
+        this.$on('select', function(event) {
+            this.eventType = event.type;
+            var index = event.detail.index;
+            this.selectedIndex = index;
+            this.selected(index);
+        });
+    },
+    methods: {
+        selected: function(index) {
+            for (var i = 0; i < this.tabItems.length; i++) {
+                var tabItem = this.tabItems[i];
+                if (i == index) {
+                    tabItem.titleColor = this.selectedColor;
+                    tabItem.visibility = 'visible';
+                } else {
+                    tabItem.titleColor = this.unselectedColor;
+                    tabItem.visibility = 'hidden';
+                }
+            }
+        },
+    }
+}
+</script>

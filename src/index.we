@@ -1,0 +1,133 @@
+<template>
+    <div class="wrapper">
+        <vbaoli-slider></vbaoli-slider>
+        <div class="p01">
+            <image class="icon-broadcast" src="../images/icon-broadcast.png"></image>
+            <vbaoli-marquee style="width: 700px;"></vbaoli-marquee>
+        </div>
+        <div class="p02">
+            <a class="p02-a" href="javascript:;">
+                <image class="p02-img" src="../images/icon-activity.png"></image>
+                <text class="p02-text">活动专区</text>
+            </a>
+            <a class="p02-a" href="javascript:;">
+                <image class="p02-img" src="../images/icon-security.png"></image>
+                <text class="p02-text">多重保障</text>
+            </a>
+            <a class="p02-a" href="javascript:;">
+                <image class="p02-img" src="../images/icon-invite.png"></image>
+                <text class="p02-text">好友红包</text>
+            </a>
+        </div>
+        <div class="medal">
+            <image class="icon-medal" src="../images/icon-medal.png"></image>
+            <text style="font-size: 28px;">新手专享</text>
+        </div>
+        <div class="p03">
+            <div style="width: 320px; text-align: center">
+                <div class="p03-t01">
+                    <text style="font-size: 60px;">15</text>
+                    <text style="font-size: 24px; margin-left: 8px; margin-bottom: 8px;">%</text>
+                </div>
+                <text class="p03-t02">预期年化收益率</text>
+            </div>
+            <div style="margin-right: 65px; width: 260px;">
+                <div style="flex-direction: row; justify-content: space-between; color: #999;">
+                    <text style="font-size: 24px;">30天期限</text>
+                    <text style="font-size: 24px;">|</text>
+                    <text style="font-size: 24px;">100元起购</text>
+                </div>
+                <a class="p03-btn" href="javascript:;">
+                    <text>立即投资</text>
+                </a>
+            </div>
+        </div>
+        <a class="p04">
+            <div style="margin-left: 50px;">
+                <div class="wallet-text">
+                    <text style="color: #ff9125; font-size: 38px;">专享</text>
+                    <text style="color: #333; font-size: 38px;">-保利钱包</text>
+                </div>
+                <div class="wallet-text" style="margin-top: 36px; color: #999;">
+                    <text style="font-size: 30px;">一元起投 方便灵活</text>
+                    <div class="icon-check">
+                        <text style="font-size: 18px;">立即查看</text>
+                    </div>
+                </div>
+            </div>
+            <image style="margin-right: 80px; width: 130px; height: 158px;" src="../images/icon-wallet.png"></image>
+        </a>
+        <vbaoli-footer selected-index="{{selectedIndex}}"></vbaoli-footer>
+    </div>
+</template>
+<style>
+.wrapper { width: 750px; }
+.p01 { height: 64px; -webkit-align-items:center; align-items:center; flex-direction: row; border-bottom: 1px solid #e7e7e7; background-color: #fff; }
+.icon-broadcast { margin-left: 16px; width: 26px; height: 24px;  }
+.p02 { flex-direction: row; justify-content: space-around; border-bottom: 1px solid #e7e7e7; background-color: #fff; }
+.p02-a { display: flex; justify-content: center; align-items: center; width: 250px; height: 194px; font-size: 14px; }
+.p02-img { display: flex; width: 80px; height: 80px; }
+.p02-text { margin-top: 16px; color: #666; font-size: 24px; }
+.medal { flex-direction: row; display: flex; height: 60px; line-height: 60px; align-items: center; color: #ff9125;}
+.icon-medal { display: flex; margin-left: 13px; margin-right: 13px; width: 34px; height: 32px; }
+.p03 { flex-direction: row; align-items: center; justify-content: space-between; height: 280px; background-color: #fff; }
+.p03-t01 { flex-direction: row; justify-content: center; align-items: flex-end; color: #ff6531; }
+.p03-t02 { margin-top: 28px; color: #999; font-size: 24px; }
+.p03-btn { margin-top: 26px;height: 68px; line-height: 68px; text-align: center; color: #fff; font-size: 28px; border-radius: 8px; background-color: #ff9125; }
+.p04 { flex-direction: row; justify-content: space-between; align-items: center; margin-top: 14px; margin-bottom: 14px; height: 180px; background-color: #fff; }
+.icon-check { margin-left: 22px; width: 92px; height: 26px; line-height: 26px; color: #ff6531; text-align: center; border-width: 1px; border-style: solid; border-color: #ff6531; }
+.wallet-text { flex-direction: row; }
+</style>
+<script>
+require('weex-components');
+require('./include/vbaoli-slider.we');
+require('./include/vbaoli-marquee.we');
+require('./include/vbaoli-footer.we');
+module.exports = {
+    data: {
+        dir: 'dist',
+        baseUrl: '',
+        selectedIndex: 0,
+        sliderList: [{
+            itemId: '520421163634',
+            title: 'item1',
+            pictureUrl: './images/slider01.png'
+        }, {
+            itemId: '522076777462',
+            title: 'item2',
+            pictureUrl: './images/slider02.png'
+        }, {
+            itemId: '522076777462',
+            title: 'iten3',
+            pictureUrl: './images/slider03.png'
+        }]
+    },
+    created: function() {
+        var bundleUrl = this.$getConfig().bundleUrl;
+        var nativeBase;
+        var isAndroidAssets = bundleUrl.indexOf('file://assets/') >= 0;
+        var isiOSAssets = bundleUrl.indexOf('file:///') >= 0 && bundleUrl.indexOf('WeexDemo.app') > 0;
+        if (isAndroidAssets) {
+            nativeBase = 'file://assets/';
+        } else if (isiOSAssets) {
+            // file:///var/mobile/Containers/Bundle/Application/{id}/WeexDemo.app/
+            // file:///Users/{user}/Library/Developer/CoreSimulator/Devices/{id}/data/Containers/Bundle/Application/{id}/WeexDemo.app/
+            nativeBase = bundleUrl.substring(0, bundleUrl.lastIndexOf('/') + 1);
+        } else {
+            var host = 'localhost:8080';
+            var matches = /\/\/([^\/]+?)\//.exec(this.$getConfig().bundleUrl);
+            if (matches && matches.length >= 2) {
+                host = matches[1];
+            }
+            nativeBase = 'http://' + host + '/' + this.dir + '/';
+        }
+        var h5Base = './index.html?page=./' + this.dir + '/';
+        // in Native
+        this.baseUrl = nativeBase;
+        if (typeof window === 'object') {
+            // in Browser or WebView
+            this.baseUrl = h5Base;
+        }
+    },
+}
+</script>

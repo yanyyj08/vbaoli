@@ -1,0 +1,84 @@
+<template>
+    <div class="wrapper">
+        <vbaoli-header title="{{produceName}}"></vbaoli-header>
+        <scroller class="content">
+            <div class="p01">
+                <div class="l01"><text style="color: #ff9125; font-size: 24px; justify-content: center;">{{productName}}</text><text style="color: #999; font-size: 24px;">{{productTime}}</text></div>
+                <div class="l02">
+                    <div class="l02-part">
+                        <div style="flex-direction: row; align-items: flex-end; color: #ff6531;"><text style="font-size: 78px;">15.0</text><text style="font-size: 24px;">%</text></div>
+                        <text class="base-font" style="margin-top: 18px;">预期年收益</text>
+                    </div>
+                    <div class="l02-part">
+                        <div style="flex-direction: row; align-items: flex-end; color: #333;"><text style="font-size: 78px;">12</text><text style="font-size: 24px;">个月</text></div>
+                        <text class="base-font" style="margin-top: 12px;">期限</text>
+                    </div>
+                </div>
+                <div class="l03">
+                    <div class="progress-box">
+                        <div class="progress" style="width: {{progress}}%;"></div>
+                    </div>
+                    <text class="base-font">已投{{progress}}%</text>
+                </div>
+                <div class="l04">
+                    <text class="base-font" style="width: 355px;">起投金额：100元</text>
+                    <text class="base-font" style="width: 355px;">项目总额：888888元</text>
+                </div>
+            </div>
+            <div class="p02">
+                <text class="p02-part">当日计息</text>
+                <image class="dot" src="../../../images/icon-dot-01.png"></image>
+                <text class="base-font">期限7天</text>
+                <image class="dot" src="../../../images/icon-dot-01.png"></image>
+                <text class="p02-part" style="background-color: #ddd;">到期退出</text>
+            </div>
+            <div class="p03">
+                <embed class="embed" src="{{src}}" type="weex"></embed>
+            </div>
+        </scroller>
+        <vbaoli-footer selected-index="{{selectedIndex}}"></vbaoli-footer>
+    </div>
+</template>
+<style>
+.wrapper { width: 750px; }
+.content { position: absolute; top: 100px; left: 0; right: 0; bottom: 100px; }
+.p01 { background-color: #fff; }
+.l01 { flex-direction: row; align-items: center; padding-left: 30px; line-height: 80px; }
+.l02 { flex-direction: row; justify-content: space-between; margin-top: 10px; }
+.l02-part { width: 375px; align-items: center; }
+.base-font { font-size: 24px; color: #999; }
+.l03 { flex-direction: row; justify-content: space-between; align-items: center; margin-top: 20px; padding-left: 20px; padding-right: 20px; }
+.progress-box { width: 550px; height: 10px; background-color: #ddd; border-radius: 5px; }
+.progress { height: 10px; background-color: #ff9125; border-bottom-left-radius: 5px; border-top-left-radius: 5px; }
+.l04 { flex-direction: row; justify-content: space-between; margin-left: 20px; marign-right: 20px; line-height: 60px; }
+.p02 { margin-top: 20px; padding-top: 40px; padding-bottom: 40px; padding-left: 40px; padding-right: 40px; background-color: #fff; flex-direction: row; justify-content: space-between; align-items: center; }
+.p02-part { width: 170px; height: 60px; line-height: 60px; color: #fff; font-size: 24px; text-align: center; border-radius: 4px; background-color: #ff9125; }
+.dot { width: 84px; height: 2px; }
+.p03 { position: absolute; top: 494px; left: 0; right: 0; min-height: 1100px; }
+.embed { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+</style>
+<script>
+require('weex-components');
+require('../../include/vbaoli-footer.we');
+require('../../include/vbaoli-header.we');
+var apis = require('../../common/api');
+module.exports = {
+    data: {
+        dir: 'dist',
+        productName: '年保利',
+        productTime: '170101',
+        progress: 40,
+        status: 0,
+        selectedIndex: 1
+    },
+    created: function() {
+        var bundleUrl = this.$getConfig().bundleUrl;
+        var base = apis.getBaseUrl(bundleUrl);
+        if (this.status == 0) {
+            this.src = base + 'modules/borrow/optimized/optimizedDetails.js';
+        } else {
+            this.src = base + '/modules/borrow/supplyChain/supplyChainDetails.js';
+        }
+    },
+}
+</script>

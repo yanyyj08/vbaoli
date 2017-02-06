@@ -1,0 +1,27 @@
+<template>
+    <div class="content">
+        <product-list product-item="{{productItem}}"></product-list>
+    </div>
+</template>
+
+<style>
+.content { position:absolute; top: 0; left: 0; right: 0; bottom: 0; }
+</style>
+<script>
+require('weex-components');
+require('../../../include/product-list.we');
+
+module.exports = {
+    data: {
+        productItem: [
+            { isNew: true, title: '吧', percent: 8, month: 1, productProgress: 56, paymentMethod: '一次结清' },
+            { isNew: false, title: '嘻嘻', percent: 30, month: 1, productProgress: 12, paymentMethod: '一次结清' },
+            { isNew: false, title: '嘻嘻', percent: 30, month: 1, productProgress: 12, paymentMethod: '一次结清' },
+            { isNew: false, title: '嘻嘻', percent: 30, month: 1, productProgress: 12, paymentMethod: '一次结清' },
+            { isNew: false, title: '嘻嘻', percent: 30, month: 1, productProgress: 12, paymentMethod: '一次结清' },
+            { isNew: false, title: '嘻嘻', percent: 30, month: 1, productProgress: 12, paymentMethod: '一次结清' },
+            { isNew: false, title: '恍恍', percent: 30, month: 12, productProgress: 0, paymentMethod: '一次结清' },
+        ]
+    }
+}
+</script>

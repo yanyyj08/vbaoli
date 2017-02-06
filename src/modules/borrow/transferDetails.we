@@ -1,0 +1,17 @@
+<template>
+    <div class="wrapper">
+
+    </div>
+</template>
+<style>
+.wrapper { width: 750px; }
+.content { position: absolute; margin-bottom: 0; top: 100px; left: 0; right: 0; bottom: 100px; }
+</style>
+<script>
+require('weex-components');
+module.exports = {
+    data: {
+
+    }
+}
+</script>

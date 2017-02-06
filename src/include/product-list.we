@@ -1,0 +1,103 @@
+<template>
+        <list>
+                <!--<refresh onrefresh="onrefresh" display="{{refreshDisplay}}">-->
+                    <!--{{refreshText}}-->
+                <!--</refresh>-->
+                <cell if={{isProduct}} repeat="productItem">
+                    <product-list-item base-url="{{baseUrl}}" invest-status="{{investStatus}}" is-new="{{isNew}}" title="{{title}}" percent="{{percent}}" month="{{month}}" last-time="{{lastTime}}" payment-method="{{paymentMethod}}" product-progress="{{productProgress}}"></product-list-item>
+                </cell>
+                <cell if={{isTransfer}} repeat="productItem">
+                    <transfer-list-item base-url="{{baseUrl}}" invest-status="{{investStatus}}" is-new="{{isNew}}" title="{{title}}" percent="{{percent}}" transfer-money="{{transferMoney}}" last-time="{{lastTime}}" payment-method="{{paymentMethod}}" product-progress="{{productProgress}}"></transfer-list-item>
+                </cell>
+                <!--<loading onloading="onloading" display="{{loadingDisplay}}">-->
+                    <!--{{loadingText}}-->
+                <!--</loading>-->
+            </list>
+</template>
+<style>
+</style>
+<script>
+require('weex-components');
+require('./product-list-item.we');
+require('./transfer-list-item.we');
+
+module.exports = {
+    data: {
+        dir: 'dist',
+        baseUrl: '',
+        refreshDisplay: true,
+        loadingDisplay: true,
+        refreshText: '下拉刷新',
+        loadingText: '加载更多',
+        isProduct: true,
+        productItem: []
+    },
+    created: function() {
+        this.isTransfer = !this.isProduct;
+
+        var bundleUrl = this.$getConfig().bundleUrl;
+        var nativeBase;
+        var isAndroidAssets = bundleUrl.indexOf('file://assets/') >= 0;
+        var isiOSAssets = bundleUrl.indexOf('file:///') >= 0 && bundleUrl.indexOf('WeexDemo.app') > 0;
+        if (isAndroidAssets) {
+            nativeBase = 'file://assets/';
+        } else if (isiOSAssets) {
+            // file:///var/mobile/Containers/Bundle/Application/{id}/WeexDemo.app/
+            // file:///Users/{user}/Library/Developer/CoreSimulator/Devices/{id}/data/Containers/Bundle/Application/{id}/WeexDemo.app/
+            nativeBase = bundleUrl.substring(0, bundleUrl.lastIndexOf('/') + 1);
+        } else {
+            var host = 'localhost:8080';
+            var matches = /\/\/([^\/]+?)\//.exec(this.$getConfig().bundleUrl);
+            if (matches && matches.length >= 2) {
+                host = matches[1];
+            }
+            nativeBase = 'http://' + host + '/' + this.dir + '/';
+        }
+        var h5Base = './index.html?page=./' + this.dir + '/';
+        // in Native
+        this.baseUrl = nativeBase;
+        if (typeof window === 'object') {
+            // in Browser or WebView
+            this.baseUrl = h5Base;
+        }
+    },
+    methods: {
+        onrefresh: function() {
+            var vm = this;
+            vm.refreshDisplay = 'show'
+            if (vm.items.length > 50) {
+                vm.refreshText = "no more data!"
+                vm.refreshDisplay = 'hide'
+                return;
+            }
+            var len = vm.items.length;
+            for (var i = len; i < (len + 20); i++) {
+                vm.items.unshift({
+                    'item': 'test data ' + i
+                });
+            }
+            vm.refreshDisplay = 'hide'
+        },
+        onloading: function() {
+            var vm = this;
+            vm.loadingDisplay = 'show'
+            if (vm.items.length > 30) {
+                vm.loadingText = "no more data!"
+                vm.loadingDisplay = 'hide'
+                return;
+            }
+
+            var len = vm.items.length;
+            for (var i = len; i < (len + 20); i++) {
+                vm.items.push({
+                    'item': 'test data ' + i
+                });
+            }
+            vm.loadingDisplay = 'hide'
+        },
+        onloadmore: function() {
+            console.log("into--[onloadmore]")
+        }
+    }
+}
+</script>

@@ -1,0 +1,40 @@
+<template>
+    <div class="header">
+        <div class="header-left">
+            <image class="header-left-img" if="{{showBack}}" onclick="onBackClick" src="../images/icon-back.png"></image>
+        </div>
+        <text class="header-title">{{title}}</text>
+        <div class="header-left">
+            <image class="header-left-img" if="{{showRight}}" onclick="onBackClick" src="../images/icon-back.png"></image>
+        </div>
+    </div>
+</template>
+
+<style>
+    .header { flex-direction: row; justify-content: space-between; align-items: center; height: 100px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #ddd; background-color: #fff; }
+    .header-left { display: flex; justify-content: center; align-items: center; width: 70px; height: 60px; }
+    .header-left-img { width: 26px; height: 42px; }
+    .header-title { display: flex; width: 400px; text-align: center; color: #111; font-size: 32px; }
+    .header-right { display: flex; justify-content: center; align-items: center; width: 70px; height: 60px; }
+    .header-right-img { width: 26px; height: 42px; }
+</style>
+
+<script>
+    require('weex-components');
+    var modal = require('@weex-module/modal');
+    module.exports = {
+        data: {
+            title: '产品列表',
+            showBack: true,
+            showRight: false,
+        },
+        created: function () {
+            var self = this;
+        },
+        methods: {
+            onBackClick: function (e) {
+                this.$dispatch('onbackclick', {});
+            }
+        }
+    }
+</script>

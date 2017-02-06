@@ -1,0 +1,41 @@
+<template>
+    <div class="content" refs="combo" id="progress">
+    </div>
+</template>
+<style>
+.content { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+.progress { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+</style>
+<script>
+var dom = require('@weex-module/dom');
+module.exports = {
+    data: {
+        currentProgress: 0,
+        productProgress: 0
+    },
+    created: function() {
+//        var currentProgress = this.currentProgress;
+//        var finalProgress = this.productProgress;
+//        var loadProgress = setInterval(function() {
+//            if (currentProgress >= finalProgress) {
+//                clearInterval(loadProgress)
+//            }
+//            currentProgress++;
+//
+//        }, 5000);
+        console.log(this.$el('progress'));
+    },
+    methods: {
+        drawProgress: function() {
+
+        },
+        loadProgress: function() {
+            if (this._parent.currentProgress >= this._parent.productProgress) {
+                clearInterval(loadProgress);
+            }
+            this._parent.currentProgress++;
+            console.log(this._parent.currentProgress)
+        }
+    }
+}
+</script>

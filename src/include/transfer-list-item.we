@@ -1,0 +1,90 @@
+<template>
+    <div class="content">
+        <h3 class="p01"></i><text style="font-size: 28px;">{{title}}</text></h3>
+        <div class="p02">
+            <div class="d01">
+                <div style="flex-direction: row; align-items: flex-end; color: #ff6531;"><text style="font-size: 44px;">{{percent}}</text><text style="margin-left: 4px; margin-bottom: 4px; font-size: 18px;">%</text></div>
+                <text style="margin-top: 16px; font-size: 18px; color: #999;">预期年收益率</text>
+            </div>
+            <div class="d03" style="width: 100px;">
+                <div style="flex-direction: row; align-items: flex-end;"><text style="color: #111; font-size: 36px;">{{lastTime}}</text><text style="margin-bottom: 6px; font-size: 20px;">天</text></div>
+                <text style="margin-top: 8px; font-size: 20px; color: #999;">剩余期限</text>
+            </div>
+            <div class="d03">
+                <div style="flex-direction: row; align-items: flex-end;"><text style="color: #111; font-size: 36px;">{{transferMoney}}</text><text style="margin-bottom: 6px; font-size: 20px;"></text></div>
+                <text style="margin-top: 8px; font-size: 20px; color: #999;">转让金额</text>
+            </div>
+            <div class="d04">
+                <div class="invest-btn" onclick="toInvest"><text style="display: flex; font-size: 22px;">立即投资</text></div>
+                <!--<div if="investStatus == 2" class="invest-btn unable"><text>投标结束</text></div>-->
+                <!--<div if="investStatus == 3" class="invest-btn unable"><text>等待开始</text></div>-->
+                <text class="d04-t01" style=" margin-top: 10px; font-size: 20px; color: #999;">还款方式:{{paymentMethod}}</text>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+.content { position: relative; margin-top: 30px; padding-left: 40px; height: 280px; border-width: 1px; border-style: solid; border-color: #ddd; border-left: 0; border-right: 0; background-color: #fff; }
+.p01 { flex-direction: row; align-items: center; height: 90px; color: #111; border-bottom: 1px solid #ddd; }
+.icon { display: flex; margin-right: 20px; width: 40px; height: 40px; }
+.icon-new { background: url(../../images/icon-new.png) no-repeat center; background-size: contain; }
+.icon-one { background: url(../../images/icon-one.png) no-repeat center; background-size: contain; }
+.icon-three { background: url(../../images/icon-three.png) no-repeat center; background-size: contain; }
+.icon-half-year { background: url(../../images/icon-half-year.png) no-repeat center; background-size: contain; }
+.icon-year { background: url(../../images/icon-year.png) no-repeat center; background-size: contain; }
+.p02 { flex-direction: row; justify-content: space-between; align-items: center; height: 186px; }
+.d01 { width: 150px; }
+.d02 { width: 210px; height: 100px; background-color: #f1f1f1; }
+.d03 { align-items: center; width: 110px; text-align: center; }
+.d04 { align-items: center; width: 240px; justify-content: center;}
+.invest-btn { width: 166px; height: 58px; line-height: 58px; color: #fff; text-align: center; text-align: center; border-radius: 8px; background-color: #ff9125; }
+</style>
+
+<script>
+module.exports = {
+    data: {
+        investStatus: 1,
+        isNew: false,
+        iconClass: 'new',
+        title: '新手专享',
+        percent: '10.00',
+        lastTime: 0,
+        transferMoney: 0,
+        paymentMethod: '一次结清',
+        productProgress: 56
+    },
+    created: function() {
+        // 判断进度与1和99的关系
+//        var progress = Number(this.productProgress);
+//        if(progress > 0 && progress < 1) {
+//            this.productProgress = 1;
+//        } else if (progress > 99 && progress < 100) {
+//            this.productProgress = 99;
+//        } else {
+//            this.productProgress = Math.round(progress);
+//        }
+
+        // 年化收益保留两位小数
+//        this.percent = (this.percent).toFixed(2);
+          this.transferMoney = (this.transferMoney).toFixed(2);
+        // 新手标和月份图标
+        if (this.isNew) {
+            this.iconClass = 'icon-new';
+        } else {
+            switch(this.month) {
+                case 1: this.iconClass = 'icon-one'; break;
+                case 3: this.iconClass = 'icon-three'; break;
+                case 6: this.iconClass = 'icon-half-year'; break;
+                case 12: this.iconClass = 'icon-year'; break;
+            }
+        }
+    },
+    methods: {
+        toInvest: function() {
+
+        }
+    }
+
+}
+</script>

@@ -1,0 +1,24 @@
+<template>
+    <div class="content">
+        <product-list product-item="{{productItem}}" is-product="{{isProduct}}"></product-list>
+    </div>
+</template>
+
+<style>
+.content { position:absolute; top: 0; left: 0; right: 0; bottom: 0; }
+</style>
+<script>
+require('weex-components');
+require('../../../include/product-list.we');
+
+module.exports = {
+    data: {
+        isProduct: false,
+        productItem: [
+            { isNew: true, title: '吧啦吧啦', percent: 8, lastTime: 1, transferMoney: 400011.22,  productProgress: 56, paymentMethod: '一次结清' },
+            { isNew: false, title: '嘻嘻哈哈', percent: 30, lastTime: 1, transferMoney: 4000.00,  productProgress: 12, paymentMethod: '一次结清' },
+            { isNew: false, title: '恍恍惚惚', percent: 30, lastTime: 12, transferMoney: 4000.00,  productProgress: 0, paymentMethod: '一次结清' },
+        ]
+    }
+}
+</script>
