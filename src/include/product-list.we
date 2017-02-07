@@ -1,18 +1,18 @@
 <template>
-        <list>
+        <div>
                 <!--<refresh onrefresh="onrefresh" display="{{refreshDisplay}}">-->
                     <!--{{refreshText}}-->
                 <!--</refresh>-->
-                <cell if={{isProduct}} repeat="productItem">
+                <div if={{isProduct}} repeat="productItem">
                     <product-list-item base-url="{{baseUrl}}" invest-status="{{investStatus}}" is-new="{{isNew}}" title="{{title}}" percent="{{percent}}" month="{{month}}" last-time="{{lastTime}}" payment-method="{{paymentMethod}}" product-progress="{{productProgress}}"></product-list-item>
-                </cell>
-                <cell if={{isTransfer}} repeat="productItem">
+                </div>
+                <div if={{isTransfer}} repeat="productItem">
                     <transfer-list-item base-url="{{baseUrl}}" invest-status="{{investStatus}}" is-new="{{isNew}}" title="{{title}}" percent="{{percent}}" transfer-money="{{transferMoney}}" last-time="{{lastTime}}" payment-method="{{paymentMethod}}" product-progress="{{productProgress}}"></transfer-list-item>
-                </cell>
+                </div>
                 <!--<loading onloading="onloading" display="{{loadingDisplay}}">-->
                     <!--{{loadingText}}-->
                 <!--</loading>-->
-            </list>
+        </div>
 </template>
 <style>
 </style>

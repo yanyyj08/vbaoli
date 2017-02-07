@@ -1,10 +1,9 @@
 <template>
     <div style="flex-direction: column;">
-        <wxc-tabbar tab-items={{tabItems}} base-url={{baseUrl}} selected-index={{selectedIndex}} selected-color={{selectedColor}} unselected-color={{unselectedColor}}></wxc-tabbar>
+        <vbaoli-footer-tab tab-items={{tabItems}} base-url={{baseUrl}} selected-index={{selectedIndex}} selected-color={{selectedColor}} unselected-color={{unselectedColor}}></vbaoli-footer-tab>
     </div>
 </template>
 <script>
-require('weex-components');
 module.exports = {
     data: {
         dir: 'dist',
@@ -18,7 +17,7 @@ module.exports = {
             icon: '',
             image: '../images/icon-home.png',
             selectedImage: '../images/icon-home-active.png',
-            url: '/index.html',
+            url: 'index.js',
             visibility: 'visible',
         }, {
             index: 1,

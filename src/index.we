@@ -37,7 +37,7 @@
                     <text style="font-size: 24px;">|</text>
                     <text style="font-size: 24px;">100元起购</text>
                 </div>
-                <a class="p03-btn" href="javascript:;">
+                <a class="p03-btn" href="{{baseUrl}}modules/borrow/productDetails.js">
                     <text>立即投资</text>
                 </a>
             </div>
