@@ -1,0 +1,27 @@
+<template>
+    <scroll class="wrapper">
+        <div class="title"><text class="icon-title"></text><text>明星优选</text></div>
+        <div class="rules"><text class="rules-text">华联保利网依照严格风控标准，通过对借款企业资质及信用审核借款项目真实性审核、风险保障措施审核三重筛选最大限度降低投资风险，为投资人提供的高固定收益加项目浮动分红奖励、低风险、稳健型明星借款项目产品(主要为大型国际贸易供应链项目)。项目浮动分红奖励会在投资到期时根据项目实际运营盈利情况，按约定打入投资者账户。</text></div>
+        <div class="title"><text class="icon-title"></text><text>明星优选的优势</text></div>
+        <div class="rules"><text class="rules-text">1.超低风险：明星优选的借款企业均为国内知名企业，项目也均为有政府政策支持的大型国际贸易项目，并提供多重保障机制。</text></div>
+        <image src="/images/supply-pic01.png" style="margin-left: 219px; width: 232px; height: 234px;"></image>
+        <div class="rules"><text class="rules-text">2.高固定收益+浮动分红：投资人与知名借款企业的需求直接对接，省去多种环节成本，投资人除可获得高固定收益外，更可获得浮动贸易盈利分红奖励。</text></div>
+        <image src="/images/supply-pic02.png" style="margin-left: 197px; width: 276px; height: 210px;"></image>
+        <div class="rules"><text class="rules-text">3.担保保障：知名企业对用户投资明星优选产品承担本息全额担保，在合同规定时效内对借款企业的债务提供连带责任保证。</text></div>
+        <image src="/images/supply-pic03.png" style="margin-left: 230px; width: 210px; height: 174px;"></image>
+        <div class="rules"><text class="rules-text">4.抵押保障：借款企业必须向投资者提供货品动产抵押的风险保障。</text></div>
+        <image src="/images/supply-pic04.png" style="margin-left: 226px; width: 218px; height: 158px;"></image>
+        <div class="title"><text class="icon-title"></text><text>明星优选模式图</text></div>
+        <div class="rules">
+            <text class="rules-text">用户通过第三方支付平台充值资金，通过认购明星优选计划投资至借款企业。由借款企业的知名关联企业为投资用户提供本息全额担保，若借款企业发生逾期或还款违约，则由关联担保企业对投资用户先行代偿。</text>
+        </div>
+        <image src="/images/supply-pic05.png" style="margin-left: 31px; width: 608px; height: 522px;"></image>
+    </scroll>
+</template>
+<style>
+    .wrapper { padding: 40px; width: 750px; background-color: #fff; }
+    .title { flex-direction: row; font-size: 32px; }
+    .icon-title { margin-right: 22px; width: 4px; height: 36px; background-color: #ff9125; }
+    .rules { padding-top: 32px; padding-bottom: 32px; }
+    .rules-text { font-size: 24px; line-height: 30px; }
+</style>

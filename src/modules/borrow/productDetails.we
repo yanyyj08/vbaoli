@@ -35,6 +35,9 @@
             <div class="p03">
                 <embed class="embed" src="{{src}}" type="weex"></embed>
             </div>
+            <div class="p04">
+                <div class="invest-btn"><text class="invest-btn-text">立即投资</text></div>
+            </div>
         </scroller>
         <vbaoli-footer selected-index="{{selectedIndex}}"></vbaoli-footer>
     </div>
@@ -54,8 +57,11 @@
 .p02 { margin-top: 20px; padding-top: 40px; padding-bottom: 40px; padding-left: 40px; padding-right: 40px; background-color: #fff; flex-direction: row; justify-content: space-between; align-items: center; }
 .p02-part { width: 170px; height: 60px; line-height: 60px; color: #fff; font-size: 24px; text-align: center; border-radius: 4px; background-color: #ff9125; }
 .dot { width: 84px; height: 2px; }
-.p03 { position: absolute; top: 494px; left: 0; right: 0; min-height: 1100px; }
-.embed { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+.p03 { min-height: 100px; }
+/*.embed { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }*/
+.p04 { padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; background-color: #fff; border-top-width: 1px; border-top-style: solid; border-top-color: #ddd; border-radius: 8px; }
+.invest-btn { width: 710px; height: 86px; text-align: center; background-color: #ff9125; }
+.invest-btn-text {line-height: 86px; color: #fff; font-size: 32px; text-align: center; }
 </style>
 <script>
 require('weex-components');
@@ -65,10 +71,11 @@ var apis = require('../../common/api');
 module.exports = {
     data: {
         dir: 'dist',
+        src: '',
         productName: '年保利',
         productTime: '170101',
         progress: 40,
-        status: 0,
+        status: 1,
         selectedIndex: 1
     },
     created: function() {

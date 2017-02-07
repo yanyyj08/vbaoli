@@ -1,26 +1,25 @@
 <template>
     <div class="wrapper">
         <vbaoli-header></vbaoli-header>
-        <div class="content">
+        <scroller class="content">
             <vbaoli-tab tab-items="{{tabItems}}"></vbaoli-tab>
-        </div>
+        </scroller>
         <vbaoli-footer selected-index="{{selectedIndex}}"></vbaoli-footer>
     </div>
 </template>
 <style>
 .wrapper { width: 750px; }
-.content { position: absolute; margin-bottom: 0; top: 100px; left: 0; right: 0; bottom: 100px; }
+.content { position: absolute; top: 100px; left: 0; right: 0; bottom: 100px; }
 </style>
 <script>
 require('weex-components');
 require('../../include/vbaoli-footer.we');
 require('../../include/vbaoli-header.we');
 require('../../include/vbaoli-tab.we');
-var apis = require('../../common/api');
+
 module.exports = {
     data: {
         dir: 'dist',
-        baseUrl: '',
         selectedIndex: 1,
         tabItems: [{
             index: 0,
@@ -28,30 +27,22 @@ module.exports = {
             icon: '',
             src: 'modules/borrow/optimized/optimizedList.js',
             titleColor: '',
-            visibility: 'visible',
+            display: 'block'
         }, {
             index: 1,
             title: '供应链产品',
             icon: '',
             src: 'modules/borrow/supplyChain/supplyChainList.js',
             titleColor: '',
-            visibility: 'hidden',
+            display: 'none'
         }, {
             index: 2,
             title: '转让专区',
             icon: '',
             src: 'modules/borrow/transfer/transferList.js',
             titleColor: '',
-            visibility: 'hidden',
+            display: 'none'
         }]
-    },
-    created: function() {
-        var bundleUrl = this.$getConfig().bundleUrl;
-        this.baseUrl = apis.getBaseUrl(bundleUrl);
-        for (var i = 0; i < this.tabItems.length; i++) {
-            var tabItem = this.tabItems[i];
-            tabItem.src = this.baseUrl + tabItem.src;
-        }
     },
 }
 </script>

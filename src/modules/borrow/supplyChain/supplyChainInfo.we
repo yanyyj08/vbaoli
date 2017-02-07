@@ -1,0 +1,20 @@
+<template>
+    <scroll class="wrapper">
+        <div class="title"><text class="icon-title"></text><text>明星优选介绍</text></div>
+        <div class="rules"><text class="rules-text">华联保利网依照严格风控标准，通过对借款企业资质及信用审核借款项目真实性审核、风险保障措施审核三重筛选最大限度降低投资风险，为投资人提供的高固定收益加项目浮动分红奖励、低风险、稳健型明星借款项目产品(主要为大型国际贸易供应链项目)。项目浮动分红奖励会在投资到期时根据项目实际运营盈利情况，按约定打入投资者账户。</text></div>
+        <div class="title"><text class="icon-title"></text><text>还款方式</text></div>
+        <div class="rules"><text class="rules-text">到期还本付息，一次结清</text></div>
+        <div class="title"><text class="icon-title"></text><text>费用说明</text></div>
+        <div class="rules"><text class="rules-text">申购费无，赎回费无</text></div>
+        <div class="title"><text class="icon-title"></text><text>本期项目详情</text></div>
+        <div class="rules">
+        </div>
+    </scroll>
+</template>
+<style>
+    .wrapper { padding: 40px; width: 750px; background-color: #fff; }
+    .title { flex-direction: row; font-size: 32px; }
+    .icon-title { margin-right: 22px; width: 4px; height: 36px; background-color: #ff9125; }
+    .rules { padding-top: 32px; padding-bottom: 32px; }
+    .rules-text { font-size: 24px; line-height: 30px; }
+</style>

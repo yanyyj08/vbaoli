@@ -1,23 +1,29 @@
 <template>
     <scroll class="wrapper">
-        <div class="title"><text class="icon-title"></text><text>什么是优选保利？</text></div>
-        <text class="rules">优选保利是华联保利网推出的自动分散投资和自动转让退出的投资计划，华联保利网对借款项目的资产保障严格审核，为投资人进行分散投资和定期赎回，提高小额分散投资的效率，满足投资人多样化的理财需求。该产品适用于华联保利网风险金保障计划。</text>
-        <div class="title"><text class="icon-title"></text><text>优选保利安全吗？</text></div>
-        <text class="rules">华联保利网对每笔借款进行严格审核筛选，并适用于华联保利网风险保障金计划。</text>
-        <div class="title"><text class="icon-title"></text><text>优选保利的收益有多少？</text></div>
+        <div class="title"><text class="icon-title"></text><text>优选保利</text></div>
+        <div class="rules"><text class="rules-text">优选保利是华联保利网推出的自动分散投资和自动转让退出的投资计划，华联保利网对借款项目的资产保障严格审核，为投资人进行分散投资和定期赎回，提高小额分散投资的效率，满足投资人多样化的理财需求。该产品适用于华联保利网风险金保障计划。</text></div>
+        <div class="title"><text class="icon-title"></text><text>优选保利的优势</text></div>
+        <div class="rules"><text class="rules-text">1.即刻计息，到期赎回：系统即刻自动将投资金额分散投资到多个严格审核的优质借款项目中；到期后系统自动转让赎回。</text></div>
+        <image src="/images/optimized-pic01.png" style="width: 664px; height: 164px;"></image>
+        <div class="rules"><text class="rules-text">2.稳健分散小额投资策略：系统自动分散投资到多个精挑细选的优质小额借款项目，最大化降低投资风险。</text></div>
+        <image src="/images/optimized-pic02.png" style="margin-left: 186px; width: 298px; height: 202px;"></image>
+        <div class="rules"><text class="rules-text">3.安全有保障：投资标的为商超供应链借款项目及相关的债权转让优质资产，借款人交易材料真实且经过华联保利网严格审核。</text></div>
+        <image src="/images/optimized-pic03.png" style="margin-left: 232px; width: 206px; height: 204px;"></image>
+        <div class="title"><text class="icon-title"></text><text>优选保利模式图</text></div>
         <div class="rules">
-            <text>优选保利分为四种:</text>
-            <text>优选月保利1个月，预期年收益7.5%;</text>
-            <text>优选月保利3个月，预期年收益8.5%;</text>
-            <text>优选月保利6个月，预期年收益9.5%;</text>
-            <text>优选月保利12个月，预期年收益13.5%。</text>
+            <text class="rules-text">1.投资人投资定期保利计划;</text>
+            <text class="rules-text">2.系统自动为投资人分散投资多个优质小额借款项目;</text>
+            <text class="rules-text">3.资金到达借款人账户，并即时计息，借款人按月付息;</text>
+            <text class="rules-text">4.某一借款到期后，系统自动为客户重新进行债权匹配;</text>
+            <text class="rules-text">5.借款到期后系统为客户自动转让退出，支付本息给投资人。</text>
         </div>
-        <div class="title"><text class="icon-title"></text><text>优选保利到期后，如何退出并实现收益？</text></div>
-        <text class="rules">优选保利到期后，系统会在3个工作日内自动将本金和收益返还至投资者账户中</text>
-        <div class="title"><text class="icon-title"></text><text>优选保利有什么优势？</text></div>
-        <div class="rules"></div>
+        <image src="/images/optimized-pic04.png" style="margin-left: 8px; width: 654px; height: 496px;"></image>
     </scroll>
 </template>
 <style>
-    .wrapper { width: 750px; }
+    .wrapper { padding: 40px; width: 750px; background-color: #fff; }
+    .title { flex-direction: row; font-size: 32px; }
+    .icon-title { margin-right: 22px; width: 4px; height: 36px; background-color: #ff9125; }
+    .rules { padding-top: 32px; padding-bottom: 32px; }
+    .rules-text { font-size: 24px; line-height: 30px; }
 </style>

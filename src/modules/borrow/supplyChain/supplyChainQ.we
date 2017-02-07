@@ -1,0 +1,23 @@
+<template>
+    <scroll class="wrapper">
+        <div class="title"><text class="icon-title"></text><text>什么是明星优选？</text></div>
+        <div class="rules"><text class="rules-text">华联保利网依照严格风控标准，通过对借款企业资质及信用审核借款项目真实性审核、风险保障措施审核三重筛选最大限度降低投资风险，为投资人提供的高固定收益加项目浮动分红奖励、低风险、稳健型明星借款项目产品(主要为大型国际贸易供应链项目)。项目浮动分红奖励会在投资到期时根据项目实际运营盈利情况，按约定打入投资者账户。</text></div>
+        <div class="title"><text class="icon-title"></text><text>明星优选安全吗？</text></div>
+        <div class="rules"><text class="rules-text">华联保利网对每笔借款进行严格审核筛选，同时，借款企业的知名关联企业为其提供连带责任保证，借款企业像投资者提供货品动产抵押的风险保障。</text></div>
+        <div class="title"><text class="icon-title"></text><text>浮动收益是什么收益，如何支付？</text></div>
+        <div class="rules"><text class="rules-text">浮动收益为项目分红奖励，投资期满时根据项目实际盈利情况，按约定随本金一起支付。</text></div>
+        <div class="title"><text class="icon-title"></text><text>明星优选都是什么项目？</text></div>
+        <div class="rules"><text class="rules-text">明星优选的投资标的均是华联保利网精选的优质资产，主要为大型国际贸易供应链借款项目。</text></div>
+        <div class="title"><text class="icon-title"></text><text>认购明星优选都有哪些费用</text></div>
+        <div class="rules"><text class="rules-text">明星优选没有认购费、赎回费，也无管理费。</text></div>
+        <div class="title"><text class="icon-title"></text><text>明星优选能否转让？转让是否产生费用？</text></div>
+        <div class="rules"><text class="rules-text">明星优选可在持有30天后进行债权转让，保证您资金的流动性。转让收付费为转让成功部分的0.5%，由转让方承担(暂不收取)。</text></div>
+    </scroll>
+</template>
+<style>
+    .wrapper { padding: 40px; width: 750px; background-color: #fff; }
+    .title { flex-direction: row; font-size: 32px; }
+    .icon-title { margin-right: 22px; width: 4px; height: 36px; background-color: #ff9125; }
+    .rules { padding-top: 32px; padding-bottom: 32px; }
+    .rules-text { font-size: 24px; line-height: 30px; }
+</style>
