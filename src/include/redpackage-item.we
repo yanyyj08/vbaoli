@@ -1,0 +1,28 @@
+<template>
+    <div style="margin-top: 20px; background-color: #fff;">
+        <div style="position: relative; height: 280px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #ddd;">
+            <image class="bg" if="canuse" src="/images/redpackage-01.png"></image>
+            <image class="bg" if="!canuse" src="/images/redpackage-02.png"></image>
+            <div style="position: absolute; z-index: 100; top: 23px; right: 17px; width: 716px; height: 234px; box-sizing: border-box; padding-left: 40px;">
+                <text style="line-height: 58px; font-size: 28px; color: #fff;">{{title}}</text>
+                <div style="flex-direction: row;"><text style="line-height: 120px; font-size: 70px; color: #fff;">{{value}}</text><text style="margin-top: 26px; font-size: 52px; color: #fff;">元</text></div>
+                <text style="line-height: 24px; font-size: 24px; color: #666;">有效期至{{time}}</text>
+            </div>
+        </div>
+        <div><text style="padding-left: 40px; line-height: 72px; font-size: 24px; color: #666;">使用条件：{{rule}}</text></div>
+    </div>
+</template>
+<style>
+.bg { position: absolute; z-index: 0; top: 23px; right: 17px; width: 716px; height: 234px; }
+</style>
+<script>
+module.exports = {
+    data: {
+        title: '',
+        value: '',
+        time: '',
+        rule: '',
+        canuse: true
+    },
+}
+</script>

@@ -48,7 +48,6 @@
             if (this.url) {
                 this.$openURL(this.baseUrl + this.url);
             } else {
-            console.log(this.titleColor);
                 var vm = this;
                 var params = {
                     index: vm.index

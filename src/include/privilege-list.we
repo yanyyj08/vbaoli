@@ -1,0 +1,20 @@
+<template>
+    <div>
+        <div if="redpackage">
+            <redpackage-item repeat="listItem"></redpackage-item>
+        </div>
+        <div if="!redpackage">
+            <interest-item repeat="listItem"></interest-item>
+        </div>
+    </div>
+</template>
+<style>
+</style>
+<script >
+module.exports = {
+    data: {
+        listItem: [],
+        redpackage: true
+    }
+}
+</script>

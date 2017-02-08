@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <vbaoli-header title="{{produceName}}"></vbaoli-header>
+        <vbaoli-header title="{{productName}}"></vbaoli-header>
         <scroller class="content">
             <div class="p01">
                 <div class="l01"><text style="color: #ff9125; font-size: 24px; justify-content: center;">{{productName}}</text><text style="color: #999; font-size: 24px;">{{productTime}}</text></div>
@@ -36,7 +36,7 @@
                 <embed class="embed" src="{{src}}" type="weex"></embed>
             </div>
             <div class="p04">
-                <div class="invest-btn"><text class="invest-btn-text">立即投资</text></div>
+                <a class="invest-btn" href="{{baseUrl}}/index.html?page=./{{dir}}/modules/borrow/invest.js"><text class="invest-btn-text">立即投资</text></a>
             </div>
         </scroller>
         <vbaoli-footer selected-index="{{selectedIndex}}"></vbaoli-footer>
@@ -71,6 +71,7 @@ var apis = require('../../common/api');
 module.exports = {
     data: {
         dir: 'dist',
+        baseUrl: '',
         src: '',
         productName: '年保利',
         productTime: '170101',

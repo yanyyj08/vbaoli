@@ -1,0 +1,32 @@
+<template>
+    <div>
+        <vbaoli-header title="我的红包"></vbaoli-header>
+        <scroller class="content">
+            <privilege-list list-item="{{listItem}}" redpackage="{{redpackage}}"></privilege-list>
+        </scroller>
+        <vbaoli-footer select-index="{{selectIndex}}"></vbaoli-footer>
+    </div>
+</template>
+<style>
+.content { position: absolute; top: 100px; left: 0; right: 0; bottom: 100px; }
+</style>
+<script>
+require('../../include/vbaoli-footer.we');
+require('../../include/vbaoli-header.we');
+require('../../include/privilege-list.we');
+module.exports = {
+    data: {
+        selectIndex: 1,
+        listItem: [],
+        redpackage: true
+    },
+    created: function() {
+        this.listItem = [
+            { title: '返现红包', value: 10, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
+            { title: '返现红包', value: 12, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
+            { title: '返现红包', value: 13, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
+            { title: '返现红包', value: 14, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
+        ];
+    }
+}
+</script>

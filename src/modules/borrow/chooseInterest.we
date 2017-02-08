@@ -1,0 +1,32 @@
+<template>
+    <div>
+        <vbaoli-header title="我的加息券"></vbaoli-header>
+        <scroller class="content">
+            <privilege-list list-item="{{listItem}}" redpackage="{{redpackage}}"></privilege-list>
+        </scroller>
+        <vbaoli-footer select-index="{{selectIndex}}"></vbaoli-footer>
+    </div>
+</template>
+<style>
+.content { position: absolute; top: 100px; left: 0; right: 0; bottom: 100px; }
+</style>
+<script>
+require('../../include/vbaoli-footer.we');
+require('../../include/vbaoli-header.we');
+require('../../include/privilege-list.we');
+module.exports = {
+    data: {
+        selectIndex: 1,
+        listItem: [],
+        redpackage: false
+    },
+    created: function() {
+        this.listItem = [
+            { title: '返现红包', rate: 10.50, minTime: '2017/01/01', maxTime: '2017/01/02', min: '投资3000元及以上', month: '3个月到六个月', canuse: true },
+            { title: '返现红包', rate: 12.50, minTime: '2017/01/01', maxTime: '2017/01/02', min: '投资3000元及以上', month: '3个月到六个月', canuse: true },
+            { title: '返现红包', rate: 13.50, minTime: '2017/01/01', maxTime: '2017/01/02', min: '投资3000元及以上', month: '3个月到六个月', canuse: true },
+            { title: '返现红包', rate: 14.50, minTime: '2017/01/01', maxTime: '2017/01/02', min: '投资3000元及以上', month: '3个月到六个月', canuse: true },
+        ];
+    }
+}
+</script>
