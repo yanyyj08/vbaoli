@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <vbaoli-header></vbaoli-header>
+        <vbaoli-header title="我的投资"></vbaoli-header>
         <div class="content">
             <vbaoli-tab tab-items="{{tabItems}}"></vbaoli-tab>
         </div>
@@ -8,38 +8,38 @@
     </div>
 </template>
 <style>
-.wrapper { width: 750px; }
+.wrapper { position: relative; width: 750px; }
 .content { position: absolute; top: 100px; left: 0; right: 0; bottom: 100px; overflow: scroll; -webkit-overflow-scrolling: touch; }
 </style>
 <script>
 require('weex-components');
-require('../../include/vbaoli-footer.we');
-require('../../include/vbaoli-header.we');
-require('../../include/vbaoli-tab.we');
+require('../../../include/vbaoli-footer.we');
+require('../../../include/vbaoli-header.we');
+require('../../../include/vbaoli-tab.we');
 
 module.exports = {
     data: {
         dir: 'dist',
-        selectedIndex: 1,
+        selectedIndex: 3,
         tabItems: [{
             index: 0,
-            title: '优选保利',
+            title: '未计息',
             icon: '',
-            src: 'modules/borrow/optimized/optimizedList.js',
+            src: 'modules/account/invest/waitCountInvestList.js',
             titleColor: '',
             display: 'block'
         }, {
             index: 1,
-            title: '供应链产品',
+            title: '计息中',
             icon: '',
-            src: 'modules/borrow/supplyChain/supplyChainList.js',
+            src: 'modules/account/invest/countingInvestList.js',
             titleColor: '',
             display: 'none'
         }, {
             index: 2,
-            title: '转让专区',
+            title: '已回款',
             icon: '',
-            src: 'modules/borrow/transfer/transferList.js',
+            src: 'modules/account/invest/feedbackInvestList.js',
             titleColor: '',
             display: 'none'
         }]

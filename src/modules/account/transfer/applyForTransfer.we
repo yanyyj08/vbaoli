@@ -1,0 +1,75 @@
+<template>
+    <div class="wrapper">
+        <vbaoli-header title="确认转让信息"></vbaoli-header>
+        <div class="content">
+            <div class="line">
+                <div class="left"><text class="t01">项目价值:</text></div>
+                <div class="right"><text class="t01">{{value}}</text></div>
+            </div>
+            <div class="line">
+                <div class="left"><text class="t01">已收本金:</text></div>
+                <div class="right"><text class="t01">{{principal1}}</text></div>
+            </div>
+            <div class="line">
+                <div class="left"><text class="t01">未收本金:</text></div>
+                <div class="right"><text class="t01">{{principal2}}</text></div>
+            </div>
+            <div class="line">
+                <div class="left"><text class="t01">转让价格:</text></div>
+                <div class="right"><input type="text" placeholder="请输入转让价格" class="ipt"></div>
+            </div>
+            <div class="line">
+                <div class="left"><text class="t01">支付密码:</text></div>
+                <div class="right"><input type="password" placeholder="请输入交易密码" class="ipt"></div>
+            </div>
+            <div class="line">
+                <div class="left"><text class="t01">调价金额:</text></div>
+                <div class="right"><text class="t01">{{changeValue}}</text><text class="t02">降价幅度{{reduceExtent}}%</text></div>
+            </div>
+            <div class="line">
+                <div class="left"><text class="t01">实际到账金额:</text></div>
+                <div class="right"><text class="t01">{{accountValue}}</text><text class="t02">(收取{{factorage}}元转让费)</text></div>
+            </div>
+            <div class="line">
+                <div class="left"><text class="t01">转让时效:</text></div>
+                <div class="right"><text class="t01">{{limitTime}}</text><text class="t02">超过有效时间成交将被系统下架</text></div>
+            </div>
+            <div class="btn">
+                <div class="confirm-btn"><text class="confirm-btn-text">提交</text></div>
+            </div>
+        </div>
+        <vbaoli-footer selected-index="{{selectedIndex}}"></vbaoli-footer>
+    </div>
+</template>
+<style>
+.wrapper { position: relative; width: 750px; }
+.content { position: absolute; top: 100px; left: 0; right: 0; bottom: 100px; overflow: scroll; -webkit-overflow-scrolling: touch; background-color: #fff; }
+.line { flex-direction: row; margin-top: 10px; line-height: 60px; }
+.left { width: 200px; margin-right: 40px; text-align: right; }
+.right { width: 470px; flex-direction: row; }
+.t01 { color: #333; font-size: 24px; }
+.t02 { margin-left: 20px; color: #666; font-size: 22px; }
+.ipt { padding-left: 20px; width: 370px; font-size: 28px; }
+.btn { position: absolute; bottom: 0; left: 0; right: 0; padding-top: 8px; padding-bottom: 8px; border-top-width: 1px; border-top-style: solid; border-top-color: #ddd; }
+.confirm-btn { width: 710px; height: 86px; line-height: 86px; text-align: center; background-color: #ff9125; margin-left: 20px; }
+.confirm-btn-text { color: #fff; font-size: 32px; text-align: center; }
+</style>
+<script>
+require('weex-components');
+require('../../../include/vbaoli-footer.we');
+require('../../../include/vbaoli-header.we');
+
+module.exports = {
+    data: {
+        value: 1000,
+        principal1: 0,
+        principal2: 10000,
+        changeValue: 10000,
+        reduceExtent: 1.00000000,
+        accountValue: 10000,
+        factorage: 0.00,
+        limitTime: '2天',
+        selectedIndex: 3
+    }
+}
+</script>

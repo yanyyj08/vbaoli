@@ -1,0 +1,20 @@
+<template>
+    <div>
+        <transfer-list-can if="transferStatus==0" repeat="{{listItem}}"></transfer-list-can>
+        <transfer-list-ing if="transferStatus==1" repeat="{{listItem}}"></transfer-list-ing>
+        <transfer-list-ed if="transferStatus==2" repeat="{{listItem}}"></transfer-list-ed>
+        <transfer-list-buy if="transferStatus==3" repeat="{{listItem}}"></transfer-list-buy>
+    </div>
+</template>
+<style>
+</style>
+<script>
+require('weex-components');
+
+module.exports = {
+    data: {
+        transferStatus: 0,
+        listItem: []
+    }
+}
+</script>

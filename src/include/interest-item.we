@@ -4,7 +4,7 @@
             <image class="bg" if="canuse" src="/images/interest-01.png"></image>
             <image class="bg" if="!canuse" src="/images/interest-02.png"></image>
             <div class="bg" style="position: absolute; z-index: 100; flex-direction: row;">
-                <div style="margin-left: 35px; margin-right: 35px; width: 24px; height: 232px; align-items: center;align-items: center"><text style="display: table-cell; vertical-align: middle; height: 232px; font-size: 24px; color: #fff; align-items: center;">{{title}}</text></div>
+                <div style="margin-left: 35px; margin-right: 35px; width: 24px; height: 232px;"><text style="font-size: 24px; color: #fff;">{{title}}</text></div>
                 <div style="flex-direction: row;">
                     <div style="margin-right: 40px; flex-direction: row;"><text style="line-height: 156px; font-size: 52px; color: #ff9125;">{{rate}}</text><text style="margin-top: 80px; color: #ff9125; font-size: 24px;">%</text></div>
                     <div style="margin-top: 40px;">

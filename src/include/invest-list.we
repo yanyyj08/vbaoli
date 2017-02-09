@@ -1,0 +1,16 @@
+<template>
+    <div>
+        <invest-list-item repeat="{{listItem}}"></invest-list-item>
+    </div>
+</template>
+<style>
+</style>
+<script>
+require('weex-components');
+
+module.exports = {
+    data: {
+        listItem: []
+    }
+}
+</script>

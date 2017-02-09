@@ -41,7 +41,7 @@ module.exports = {
             icon: '',
             image: '../images/icon-mine.png',
             selectedImage: '../images/icon-mine-active.png',
-            url: '',
+            url: 'modules/account/accountIndex.js',
             visibility: 'hidden',
         }, {
             index: 4,

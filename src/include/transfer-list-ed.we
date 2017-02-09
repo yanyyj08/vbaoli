@@ -1,0 +1,36 @@
+<template>
+    <div class="content">
+        <div class="p01">
+            <div style="flex-direction: row;"><text style="font-size: 28px;">{{title}}</text><text style="font-size: 28px;">{{version}}</text></div>
+            <text style="font-size: 24px; margin-right: 40px;">申请时间：{{time}}</text>
+        </div>
+        <div class="p02">
+            <div class="d01">
+                <div class="l01"><text class="t01">{{value}}</text><text class="t03">元</text></div>
+                <text class="t02">债权价值</text>
+            </div>
+            <div class="d02">
+                <div class="l01"><text class="t01">{{transfer}}</text><text class="t03">元</text></div>
+                <text class="t02">应收总额</text>
+            </div>
+            <div class="d03">
+                <div class="l01 p02-2"><text class="t01">{{last}}</text><text class="t03">月</text></div>
+                <text class="t02">剩余/总期限</text>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+.content { position: relative; margin-top: 10px; padding-left: 40px; height: 280px; border-width: 1px; border-style: solid; border-color: #ddd; border-left: 0; border-right: 0; background-color: #fff; }
+.p01 { flex-direction: row; justify-content: space-between; align-items: center; height: 90px; color: #111; border-bottom: 1px solid #ddd; }
+.p02 { flex-direction: row; justify-content: space-between; align-items: center; height: 186px; }
+.d01 { width: 223px; }
+.d02 { width: 223px; align-items: center; }
+.d03 { width: 223px; margin-right: 40px; text-align: right; }
+.l01 { flex-direction: row; color: #333; line-height: 54px; }
+.p02-2 { justify-content: flex-end; }
+.t01 { font-size: 28px; }
+.t02 { color: #999; font-size: 24px; line-height: 40px; }
+.t03 { font-size: 20px; margin-top: 4px; }
+</style>

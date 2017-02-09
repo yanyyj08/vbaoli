@@ -1,0 +1,25 @@
+<template>
+    <scroller class="content">
+        <!-- 这里是下拉刷新之类 -->
+        <div>
+            <transfer-list transfer-status="{{transferStatus}}" list-item="{{listItem}}"></transfer-list>
+        </div>
+    </scroller>
+</template>
+
+<style>
+/*.content { position:absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; }*/
+.content { min-height: 10px; }
+</style>
+<script>
+require('../../../include/transfer-list.we');
+
+module.exports = {
+    data: {
+        transferStatus: 1,
+        listItem: [
+            { title: '优选三月标', version: '170101', value: '200.38', transfer: '200.00', last: '2/6', time: '2017-01-01' },
+        ]
+    }
+}
+</script>

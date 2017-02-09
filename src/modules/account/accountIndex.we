@@ -1,0 +1,95 @@
+<template>
+    <div>
+        <scroller class="content">
+            <div class="p01">
+                <div class="l01">
+                    <image style="position: absolute; top: 0; left: 0; z-index: 0; width: 750px; height: 470px;" src="/images/account-bg.png"></image>
+                    <div style="position: relative; z-index: 100;">
+                        <div style="position: relative; text-align: center;">
+                            <image style="display: flex; align-self: center; margin-top: 80px; box-sizing: border-box; width: 140px; height: 140px; border-width: 8px; border-style: solid; border-color: rgba(255, 255, 255, 0.3); border-radius: 70px"></image>
+                            <text style="margin-top: 20px; line-height: 24px; font-size: 24px; color: #fff;">用户名</text>
+                            <text style="margin-top: 10px; line-height: 24px; font-size: 24px; color: #fff;">电话</text>
+                            <div style="position: absolute; top: 36px; right: 0; width: 156px; height: 84px; border-top-left-radius: 42px; border-bottom-left-radius: 42px; background-color: #ff9125; color: #fff; text-align: center;"><text style="margin-top: 14px; font-size: 24px;">2323.00</text><text style="font-size: 18px;">总资产(元)</text></div>
+                        </div>
+                        <div style="flex-direction: row; margin-top: 76px;">
+                            <div class="tab-01"><text style="font-size: 32px;">1111.00</text><text style="font-size: 24px;">总收益(元)</text></div>
+                            <div class="tab-01"><text style="font-size: 32px;">1111.00</text><text style="font-size: 24px;">昨日收益(元)</text></div>
+                            <div class="tab-01"><text style="font-size: 32px;">1111.00</text><text style="font-size: 24px;">可用余额(元)</text></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex-direction: row; line-height: 80px; background-color: #fff; color: #ff9125;">
+                    <a href="" style="width: 374px; text-align: center;"><text style="font-size: 36px;">充值</text></a>
+                    <text style="width: 1px; height: 60px; margin-top: 10px; background-color: #ddd;"></text>
+                    <a href="" style="width: 375px; text-align: center;"><text style="font-size: 36px;">提现</text></a>
+                </div>
+            </div>
+            <div class="p02">
+                <a href="{{baseUrl}}modules/account/invest/myInvest.js" class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-01.png"></image><text class="line-text">我的投资</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+                <a href="{{baseUrl}}modules/account/transfer/myTransfer.js" class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-02.png"></image><text class="line-text">债权转让</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+                <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-03.png"></image><text class="line-text">保利钱包</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+                <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-04.png"></image><text class="line-text">我的红包</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+                <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-05.png"></image><text class="line-text">我的加息券</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+            </div>
+            <div class="p02">
+                <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-06.png"></image><text class="line-text">我的签到</text></div><div class="line-right"><text class="line-right-text">未签到</text><div class="icon-dotted"></div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+                <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-07.png"></image><text class="line-text">消息中心</text></div><div class="line-right"><text class="line-right-text">313未读</text><div class="icon-dotted"></div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+                <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-08.png"></image><text class="line-text">邀请好友</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+                <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-09.png"></image><text class="line-text">交易记录</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+                <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-10.png"></image><text class="line-text">账户设置</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+            </div>
+        </scroller>
+        <vbaoli-footer selected-index="{{selectedIndex}}"></vbaoli-footer>
+    </div>
+</template>
+<style>
+.content { position: absolute; top: 0; bottom: 100px; left: 0; right: 0; width: 750px; }
+.l01 { position: relative; height: 470px; }
+.tab-01 { width: 250px; color: #fff; text-align: center; border-left-width: 1px; border-left-solid: solid; border-left-color: #fff; }
+.p02 { margin-top: 10px; padding-left: 40px; background-color: #fff; }
+.line { flex-direction: row; justify-content: space-between; padding-right: 40px;  line-height: 80px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #ddd; }
+.line-left { flex-direction: row; }
+.line-right { flex-direction: row; }
+.line-icon { width: 30px; height: 30px; margin-top: 25px; margin-left: 16px; margin-right: 16px; }
+.line-text { font-size: 24px; color: #666; }
+.line-right-text { font-size: 20px; color: #999; }
+.icon-dotted { margin-top: 30px; margin-left: 8px; margin-right: 16px; width: 16px; height: 16px; background-color: #f00; border-radius: 8px; }
+.line-arrow { width: 20px; height: 32px; margin-top: 24px; }
+</style>
+<script >
+require('../../include/vbaoli-footer.we');
+module.exports = {
+    data: {
+        dir: 'dist',
+        selectedIndex: 3,
+        baseUrl: ''
+    },
+    created: function() {
+        var bundleUrl = this.$getConfig().bundleUrl;
+        var nativeBase;
+        var isAndroidAssets = bundleUrl.indexOf('file://assets/') >= 0;
+        var isiOSAssets = bundleUrl.indexOf('file:///') >= 0 && bundleUrl.indexOf('WeexDemo.app') > 0;
+        if (isAndroidAssets) {
+            nativeBase = 'file://assets/';
+        } else if (isiOSAssets) {
+            // file:///var/mobile/Containers/Bundle/Application/{id}/WeexDemo.app/
+            // file:///Users/{user}/Library/Developer/CoreSimulator/Devices/{id}/data/Containers/Bundle/Application/{id}/WeexDemo.app/
+            nativeBase = bundleUrl.substring(0, bundleUrl.lastIndexOf('/') + 1);
+        } else {
+            var host = 'localhost:8080';
+            var matches = /\/\/([^\/]+?)\//.exec(this.$getConfig().bundleUrl);
+            if (matches && matches.length >= 2) {
+                host = matches[1];
+            }
+            nativeBase = 'http://' + host + '/' + this.dir + '/';
+        }
+        var h5Base = './index.html?page=./' + this.dir + '/';
+        // in Native
+        this.baseUrl = nativeBase;
+        if (typeof window === 'object') {
+            // in Browser or WebView
+            this.baseUrl = h5Base;
+        }
+    }
+}
+</script>

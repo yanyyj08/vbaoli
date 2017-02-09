@@ -1,0 +1,99 @@
+<template>
+    <div class="wrapper" onclick="checkProgress">
+        <div class="content">
+            <div class="p01"><text class="p01-l01">{{title}}</text><text class="p01-l02">({{number}})</text></div>
+            <div class="p02">
+                <div class="p02-l01">
+                    <div class="p02-l01-p01"><text class="p02-l01-t01">{{rate}}</text><text class="p02-l01-t02">%</text></div>
+                    <text class="p02-t02">预计年化收益</text>
+                </div>
+                <div class="p02-l02">
+                    <text class="p02-t01">{{money}}</text>
+                    <text class="p02-t02">投资金额(元)</text>
+                </div>
+                <div if="investStatus==0" class="p02-l03">
+                    <text class="p02-t01">未计息</text>
+                    <text class="p02-t02">状态</text>
+                </div>
+                <div if="investStatus!=0" class="p02-l03">
+                    <image class="icon-arrow" src="{{imageSrc}}"></image>
+                    <text if="investStatus==1" class="p02-t01">计息中</text>
+                    <text if="investStatus==2" class="p02-t01">计息中</text>
+                    <text class="p02-t02">状态</text>
+                </div>
+            </div>
+            <div class="p03"><text class="p03-t01">投资日期：{{time}}</text></div>
+        </div>
+        <div class="progress-content" if="investStatus!=0" style="display: {{display}}">
+            <div class="border-top progress" repeat="{{item in progress}}">
+                <div class="progress-p01">
+                    <text class="p02-t03">{{item.requireTime}}</text>
+                    <text class="p02-t02">应收日期</text>
+                </div>
+                <div class="progress-p02">
+                    <text class="p02-t03">{{item.total}}</text>
+                    <text class="p02-t02">第几期/总数</text>
+                </div>
+                <div class="progress-p03">
+                    <text class="p02-t03">{{item.require}}</text>
+                    <text class="p02-t02">应收</text>
+                </div>
+                <div class="progress-p04">
+                    <text class="p02-t03">{{item.status}}</text>
+                    <text class="p02-t02">状态</text>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<style>
+.wrapper { background-color: #fff; margin-top: 10px; }
+.content { background-color: #fff; margin-top: 10px; padding-left: 40px; padding-right: 40px; padding-bottom: 20px; }
+.p01 { flex-direction: row; line-height: 80px; color: #666; }
+.p01-l01 { font-size: 36px; }
+.p01-l02 { font-size: 24px; margin-left: 16px; }
+.p02 { flex-direction: row; }
+.p02-l01 { width: 270px; }
+.p02-l02 { width: 220px; }
+.p02-t01{ font-size: 32px; color: #333; line-height: 40px; }
+.p02-t02{ font-size: 24px; color: #999; line-height: 54px; }
+.p02-t03{ font-size: 24px; color: #666; line-height: 54px; }
+.p02-l03 { position: relative; width: 180px; text-align: center; }
+.p02-l01-p01 { flex-direction: row; color: #ff9125; }
+.p02-l01-t01 { font-size: 36px; line-height: 40px; }
+.p02-l01-t02 { font-size: 24px; margin-top: 10px; }
+.p03-t01 { font-size: 24px; line-height: 24px; color: #666; }
+.icon-arrow { position: absolute; top: 12px; right: 0; width: 25px; height: 15px; }
+.border-top { border-top-width: 1px; border-top-style: solid; border-top-color: #ddd; }
+.progress-content { padding-left: 40px; padding-right: 40px; }
+.progress { flex-direction: row; }
+.progress-p01 { width: 200px; }
+.progress-p02 { width: 160px; }
+.progress-p03 { width: 200px; text-align: center; }
+.progress-p04 { width: 110px; text-align: center; }
+</style>
+<script>
+module.exports = {
+    data: {
+        display: 'none',
+        imageSrc: '/images/icon-arrow-bottom.png'
+    },
+    created: function() {
+
+    },
+    methods: {
+        checkProgress: function() {
+            if(this.investStatus != 0) {
+                if (this.display == 'none') {
+                    this.display = 'block';
+                    this.imageSrc = '/images/icon-arrow-top.png';
+                } else {
+                    this.display = 'none';
+                    this.imageSrc = '/images/icon-arrow-bottom.png';
+                }
+
+            }
+        }
+    }
+}
+</script>
