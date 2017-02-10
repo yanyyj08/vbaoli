@@ -1,12 +1,11 @@
 <template>
     <div style="margin-top: 20px; padding-left: 35px; padding-right: 35px; ">
         <div style="position: relative; height: 232px;">
-            <image class="bg" if="canuse" src="/images/interest-01.png"></image>
-            <image class="bg" if="!canuse" src="/images/interest-02.png"></image>
+            <image class="bg" src="{{src}}"></image>
             <div class="bg" style="position: absolute; z-index: 100; flex-direction: row;">
                 <div style="margin-left: 35px; margin-right: 35px; width: 24px; height: 232px;"><text style="font-size: 24px; color: #fff;">{{title}}</text></div>
                 <div style="flex-direction: row;">
-                    <div style="margin-right: 40px; flex-direction: row;"><text style="line-height: 156px; font-size: 52px; color: #ff9125;">{{rate}}</text><text style="margin-top: 80px; color: #ff9125; font-size: 24px;">%</text></div>
+                    <div style="margin-right: 40px; flex-direction: row; color: {{color}};"><text style="line-height: 156px; font-size: 52px;">{{rate}}</text><text style="margin-top: 80px; font-size: 24px;">%</text></div>
                     <div style="margin-top: 40px;">
                         <text class="rule">{{month}}</text>
                         <text class="rule">{{min}}</text>
@@ -28,7 +27,17 @@ module.exports = {
         value: '',
         time: '',
         rule: '',
-        canuse: true
+        canuse: true,
+        src: '/images/interest-01.png'
     },
+    created: function() {
+        if (this.canuse) {
+            this.color = '#ff9125';
+            this.src = '/images/interest-01.png';
+        } else {
+            this.color = '#999999';
+            this.src = '/images/interest-02.png';
+        }
+    }
 }
 </script>

@@ -1,0 +1,19 @@
+<template>
+    <div>
+        <vbaoli-header title="充值"></vbaoli-header>
+        <div>
+            <div class="p01"><image></image><text>选择银行</text></div>
+            <div class="p02"><text>提现金额:</text><input type="text" placeholder="100元起"></div>
+            <div><text>可提金额:</text>{{can}}<text></text></div>
+        </div>
+        <vbaoli-footer selected-index="{{selectedIndex}}"></vbaoli-footer>
+    </div>
+</template>
+<style></style>
+<script>
+modules.exports = {
+    data: {
+        selectedIndex: 3
+    }
+}
+</script>

@@ -1,11 +1,11 @@
 <template>
     <div class="header">
         <div class="header-left">
-            <image class="header-left-img" if="{{showBack}}" onclick="onBackClick" src="../images/icon-back.png"></image>
+            <image class="header-left-img" if="{{showBack}}" onclick="onBackClick" src="/images/icon-back.png"></image>
         </div>
         <text class="header-title">{{title}}</text>
         <div class="header-left">
-            <image class="header-left-img" if="{{showRight}}" onclick="onBackClick" src="../images/icon-back.png"></image>
+            <image class="header-left-img" if="{{showRight}}" onclick="onBackClick" src="/images/icon-back.png"></image>
         </div>
     </div>
 </template>

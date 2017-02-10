@@ -19,17 +19,17 @@
                     </div>
                 </div>
                 <div style="flex-direction: row; line-height: 80px; background-color: #fff; color: #ff9125;">
-                    <a href="" style="width: 374px; text-align: center;"><text style="font-size: 36px;">充值</text></a>
+                    <a href="{{baseUrl}}modules/account/recharge.js" style="width: 374px; text-align: center;"><text style="font-size: 36px;">充值</text></a>
                     <text style="width: 1px; height: 60px; margin-top: 10px; background-color: #ddd;"></text>
-                    <a href="" style="width: 375px; text-align: center;"><text style="font-size: 36px;">提现</text></a>
+                    <a href="{{baseUrl}}modules/account/withdrawals.js" style="width: 375px; text-align: center;"><text style="font-size: 36px;">提现</text></a>
                 </div>
             </div>
             <div class="p02">
                 <a href="{{baseUrl}}modules/account/invest/myInvest.js" class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-01.png"></image><text class="line-text">我的投资</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
                 <a href="{{baseUrl}}modules/account/transfer/myTransfer.js" class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-02.png"></image><text class="line-text">债权转让</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
-                <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-03.png"></image><text class="line-text">保利钱包</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
-                <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-04.png"></image><text class="line-text">我的红包</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
-                <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-05.png"></image><text class="line-text">我的加息券</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+                <a href="{{baseUrl}}modules/account/wallet/myWallet.js" class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-03.png"></image><text class="line-text">保利钱包</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+                <a href="{{baseUrl}}modules/account/profit/myRedpackage.js" class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-04.png"></image><text class="line-text">我的红包</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
+                <a href="{{baseUrl}}modules/account/profit/myInterest.js"  class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-05.png"></image><text class="line-text">我的加息券</text></div><div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>
             </div>
             <div class="p02">
                 <a class="line"><div class="line-left"><image class="line-icon" src="/images/icon-account-06.png"></image><text class="line-text">我的签到</text></div><div class="line-right"><text class="line-right-text">未签到</text><div class="icon-dotted"></div><image src="/images/icon-arrow-right.png" class="line-arrow"></image></div></a>

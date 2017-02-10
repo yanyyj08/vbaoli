@@ -1,0 +1,30 @@
+<template>
+    <div>
+        <scroller class="content">
+            <div>
+                <privilege-list list-item="{{listItem}}" redpackage="{{redpackage}}"></privilege-list>
+            </div>
+        </scroller>
+    </div>
+</template>
+<style>
+.content { min-height: 10px; }
+</style>
+<script>
+require('../../../include/privilege-list.we');
+module.exports = {
+    data: {
+        selectIndex: 1,
+        listItem: [],
+        redpackage: true
+    },
+    created: function() {
+        this.listItem = [
+            { title: '返现红包', value: 10, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
+            { title: '返现红包', value: 12, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
+            { title: '返现红包', value: 13, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
+            { title: '返现红包', value: 14, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
+        ];
+    }
+}
+</script>

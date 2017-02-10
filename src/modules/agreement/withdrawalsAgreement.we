@@ -1,0 +1,30 @@
+<template>
+    <div>
+        <vbaoli-header title="账户充值规则"></vbaoli-header>
+        <scroller class="content">
+            <text class="t01">1. 目前充值不收取任何手续费；</text>
+            <text class="t01">2. 充值金额个人需大于或等于10.00元，企业需大于或等于10000.00元；</text>
+            <text class="t01">3. 您的资金将从充值银行卡转入合作支付公司的监管账户；</text>
+            <text class="t01">4. 每日的充值限额依据各银行限额为准，请注意您的银行卡充值限制，以免造成不便；</text>
+            <text class="t01">5. 充值当日不可提现。</text>
+            <text class="t01">6. 每笔提现金额最低不能少于100.00元。用户提现金额单笔最高20万，每日最高50万。</text>
+            <text class="t01">7. 提现手续费2元/笔（活动除外）。</text>
+            <text class="t01">8. 为防止套现，充值7天内提现，按提现申请金额的0.5%收取手续费，最低5元/笔，7天后按每笔2元收取手续费。</text>
+            <text class="t01">9. 您的提现申请审核通过后，我们将在 1个工作日 (国家节假日除外)之内将钱转入您在华联保利网上绑定的银行账号。规则如下：</text>
+            <text class="t01 t02">a.每个工作日15：00之前的提现申请，将在当日审核通过，当天提现。</text>
+            <text class="t01 t02">b.15：00之后的提现申请将同下个工作日的申请一并处理。遇法定节假日向后顺延。</text>
+            <text class="t01">10. 为了您的资金安全，请确保提现银行账号的姓名和您进行实名验证的姓名一致。</text>
+            <text class="t01">11. 请确保您输入的是正确的储蓄卡账号，而非信用卡账号。</text>
+            <text class="t01">12. 对于频繁的非正常投资为目的的资金充提行为，一经发现，华联保利网将通过原充值渠道进行资金清退，已收取手续费将不予返还；</text>
+            <text class="t01" style="margin-bottom: 40px;">13. 下列情况下，已收取手续费将不予返还：用户提供的银行卡非本人银行卡，被银行退回；用户申请提现的银行卡非借记卡，与银行名称不符，或卡号明显异常，被银行退回；用户没有提供提现操作必要的支行信息，且华联保利网无法与之取得联系的。</text>
+        </scroller>
+    </div>
+</template>
+<style>
+.content { position: absolute; top: 100px; bottom: 0; left: 0; right: 0; padding: 40px; background-color: #fff; }
+.t01 { line-height: 40px; margin-bottom: 14px; font-size: 28px; color: #666; }
+.t02 { text-indent: 40px; }
+</style>
+<script>
+require('../../include/vbaoli-header.we');
+</script>

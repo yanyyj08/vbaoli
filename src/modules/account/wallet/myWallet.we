@@ -1,0 +1,115 @@
+<template>
+    <div>
+        <scroller class="content">
+            <div class="p01">
+                <image src="/images/wallet-bg.png" class="bg-img"></image>
+                <div class="p01-content">
+                    <div class="header row">
+                        <a href="" style="display: flex; justify-content: center; align-items: center; width: 70px; height: 100px;"><image style="width: 26px; height: 42px;" src="/images/icon-arrow-left.png"></image></a>
+                        <text style="justify-items: center;">保利钱包</text>
+                        <a class="row"><image style="width: 32px; height: 34px; margin-top: 33px; margin-right: 8px;" src="/images/icon-record.png"></image><text class="t01">账单</text></a>
+                    </div>
+                    <text class="l01">2000.00</text>
+                    <text class="l02">保利钱包总资金(元)</text>
+                    <div class="row l03">
+                        <div class="l03-p"><text class="l03-t01">昨日收益(元)</text><text class="l03-t02">0.04</text></div>
+                        <div class="l03-p"><text class="l03-t01">历史累计收益(元)</text><text class="l03-t02">0.04</text></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row p02">
+                <div class="row p02-p"><image class="icon-img" src="/images/icon-wallet01.png"></image><text class="p02-t">超低风险</text></div>
+                <div class="row p02-p"><image class="icon-img" src="/images/icon-wallet02.png"></image><text class="p02-t">收益稳健</text></div>
+                <div class="row p02-p"><image class="icon-img" src="/images/icon-wallet03.png"></image><text class="p02-t">方便灵活</text></div>
+            </div>
+            <div class="row p03">
+                <div class="p03-p">
+                    <div class="row p03-l01" style="color: #ff6531;"><text class="p03-t01">5.75</text><text class="p03-t02">%</text></div>
+                    <text class="p03-t03">预期年化收益</text>
+                </div>
+                <div class="p03-p">
+                    <div class="row p03-l01"><text class="p03-t01">2</text><text class="p03-t02">元</text></div>
+                    <text class="p03-t03">起投金额</text>
+                </div>
+            </div>
+            <div class="p04">
+                <text class="p04-t">最低转入：2元起转</text>
+                <text class="p04-t">起息时间：T(转入日)+1</text>
+                <text class="p04-t">转出费用：平台暂不收取费用</text>
+                <text class="p04-t">转出规则：不限制金额，一天可转出100次</text>
+                <text class="p04-t">转出时间：最快0秒，最晚1-2工作日到达您保利账户</text>
+            </div>
+            <a class="p05 row" href="{{baseUrl}}modules/account/wallet/walletIntro.js">
+                <text class="p05-t">保利钱包介绍</text>
+                <image style="width: 20px; height: 32px; margin-top: 26px;" src="/images/icon-arrow-right.png"></image>
+            </a>
+        </scroller>
+        <div class="footer row">
+            <a class="footer-p" href="{{baseUrl}}modules/account/wallet/operateWallet.js&status=0"><text style="color: #ff9125; font-size: 32px;">转入</text></a>
+            <a class="footer-p" style="background-color: #ff9125;" href="{{baseUrl}}modules/account/wallet/operateWallet.js&status=1"><text style="color: #fff; font-size: 32px;">转出</text></a>
+        </div>
+    </div>
+</template>
+<style>
+.content { position: absolute; top: 0; bottom: 100px; left: 0; right: 0; background-color: #fff; }
+.footer { position: absolute; bottom: 0; left: 0; right: 0; height: 100px; line-height: 100px; background-color: #fff; border-top: 1px solid #ddd; }
+.footer-p { width: 375px; text-align: center; }
+.row { flex-direction: row; }
+.p01 { position: relative; height: 434px; }
+.bg-img { position: absolute; z-index: 0; width: 750px; height: 434px; }
+.p01-content { position:relative; z-index: 100; height: 434px; text-align: center; }
+.header {padding-right: 20px; height: 100px; line-height: 100px; color: #fff; justify-content: space-between; font-size: 28px; }
+.t01 { color: #fff; font-size: 24px; }
+.l01 { margin-top: 46px; line-height: 72px; color: #fff; font-size: 72px; }
+.l02 { margin-top: 32px; line-height: 30px; color: #fff; font-size: 30px; }
+.l03 { position: absolute; bottom: 0; background-color: rgba(255, 255, 255, 0.1); }
+.l03-p { padding-top: 10px; padding-bottom: 10px; width: 375px; line-height: 46px; }
+.l03-t01 { color: #fff; font-size: 28px; }
+.l03-t02 { color: #fff; font-size: 32px; }
+.p02-p { width: 250px; height: 124px; line-height: 124px; justify-content: center; }
+.icon-img { margin-top: 48px; width: 28px; height: 28px; margin-right: 8px; }
+.p02-t { font-size: 28px; color: #666; }
+.p03-p { width: 375px; text-align: center; }
+.p03-l01 { justify-content: center; line-height: 56px; height: 56px; }
+.p03-t01 { font-size: 56px; }
+.p03-t02 { font-size: 28px; margin-top: 10px; }
+.p03-t03 { font-size: 24px; line-height: 90px; color: #999; }
+.p04 { border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-top: 20px; padding-bottom: 20px; padding-left: 40px; }
+.p04-t { line-height: 52px; font-size: 28px; color: #666; }
+.p05 { height: 84px; line-height: 84px; justify-content: space-between; padding-left: 40px; padding-right: 40px; border-bottom: 1px solid #ddd; }
+.p05-t { font-size: 28px; color: #666; }
+</style>
+<script>
+module.exports = {
+    data: {
+        dir: 'dist'
+    },
+    created: function() {
+        var bundleUrl = this.$getConfig().bundleUrl;
+        var nativeBase;
+        var isAndroidAssets = bundleUrl.indexOf('file://assets/') >= 0;
+        var isiOSAssets = bundleUrl.indexOf('file:///') >= 0 && bundleUrl.indexOf('WeexDemo.app') > 0;
+        if (isAndroidAssets) {
+            nativeBase = 'file://assets/';
+        } else if (isiOSAssets) {
+            // file:///var/mobile/Containers/Bundle/Application/{id}/WeexDemo.app/
+            // file:///Users/{user}/Library/Developer/CoreSimulator/Devices/{id}/data/Containers/Bundle/Application/{id}/WeexDemo.app/
+            nativeBase = bundleUrl.substring(0, bundleUrl.lastIndexOf('/') + 1);
+        } else {
+            var host = 'localhost:8080';
+            var matches = /\/\/([^\/]+?)\//.exec(this.$getConfig().bundleUrl);
+            if (matches && matches.length >= 2) {
+                host = matches[1];
+            }
+            nativeBase = 'http://' + host + '/' + this.dir + '/';
+        }
+        var h5Base = './index.html?page=./' + this.dir + '/';
+        // in Native
+        this.baseUrl = nativeBase;
+        if (typeof window === 'object') {
+            // in Browser or WebView
+            this.baseUrl = h5Base;
+        }
+    },
+}
+</script>

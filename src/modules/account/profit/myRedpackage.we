@@ -1,32 +1,48 @@
 <template>
-    <div>
+    <div class="wrapper">
         <vbaoli-header title="我的红包"></vbaoli-header>
-        <scroller class="content">
-            <privilege-list list-item="{{listItem}}" redpackage="{{redpackage}}"></privilege-list>
-        </scroller>
-        <vbaoli-footer select-index="{{selectIndex}}"></vbaoli-footer>
+        <div class="content">
+            <vbaoli-tab tab-items="{{tabItems}}"></vbaoli-tab>
+        </div>
+        <vbaoli-footer selected-index="{{selectedIndex}}"></vbaoli-footer>
     </div>
 </template>
 <style>
-.content { position: absolute; top: 100px; left: 0; right: 0; bottom: 100px; }
+.wrapper { position: relative; width: 750px; }
+.content { position: absolute; top: 100px; left: 0; right: 0; bottom: 100px; overflow: scroll; -webkit-overflow-scrolling: touch; }
 </style>
 <script>
-require('../../include/vbaoli-footer.we');
-require('../../include/vbaoli-header.we');
-require('../../include/privilege-list.we');
+require('weex-components');
+require('../../../include/vbaoli-footer.we');
+require('../../../include/vbaoli-header.we');
+require('../../../include/vbaoli-tab.we');
+
 module.exports = {
     data: {
-        selectIndex: 1,
-        listItem: [],
-        redpackage: true
+        dir: 'dist',
+        selectedIndex: 3,
+        tabItems: [{
+            index: 0,
+            title: '未使用',
+            icon: '',
+            src: 'modules/account/profit/enableRedpackage.js',
+            titleColor: '',
+            display: 'block'
+        }, {
+            index: 1,
+            title: '已使用',
+            icon: '',
+            src: 'modules/account/profit/usedRedpackage.js',
+            titleColor: '',
+            display: 'none'
+        }, {
+            index: 2,
+            title: '已过期',
+            icon: '',
+            src: 'modules/account/profit/overdueRedpackage.js',
+            titleColor: '',
+            display: 'none'
+        }]
     },
-    created: function() {
-        this.listItem = [
-            { title: '返现红包', value: 10, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
-            { title: '返现红包', value: 12, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
-            { title: '返现红包', value: 13, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
-            { title: '返现红包', value: 14, time: '2017/01/01', rule: '投资3000元及以上', canuse: true },
-        ];
-    }
 }
 </script>

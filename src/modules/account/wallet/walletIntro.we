@@ -1,0 +1,36 @@
+<template>
+    <div>
+        <vbaoli-header title="保利钱包介绍"></vbaoli-header>
+        <scroller class="content">
+            <div class="title"><text class="icon-title"></text><text>什么是"保利钱包"？</text></div>
+            <text class="text">“保利钱包”是华联保利网推出会生钱的电子钱包，让投资者既能获得高利率又能存取方便的活期产品。“保利钱包”采用基金管理模式，通过债权转让形式，将资金投入到稳健型供应链项目，项目全程引入5重风险保障，确保保利钱包资金安全可靠，原始债权人无条件赎回。</text>
+            <div class="title"><text class="icon-title"></text><text>把钱转入保利钱包，收益如何计算？</text></div>
+            <text class="text">保利钱包收益按照每日计息付息，日息计算公式：当日钱包本金 × 当日年化率 / 365, 保利钱包收益按日息累加所得，转入钱包资金按照 T+1（转入本金的第二天）开始计息。</text>
+            <div class="title"><text class="icon-title"></text><text>保利钱包，收益何时显示？</text></div>
+            <text class="text">您转入保利钱包的本金会在第二个自然日开始产生利息，第二天的收益可以在第三天显示。每日都会显示昨日的收益，让收益一目了然。</text>
+            <div class="title"><text class="icon-title"></text><text>我可以用什么方式把钱转入保利钱包，有什么限制？</text></div>
+            <text class="text">保利钱包的单笔转入最低金额为1元。</text>
+            <text class="text">保利钱包的转入支持保利账户的可用余额支付，支持银行卡充值支付。不支持红包和年化券以及现金券的使用。</text>
+            <text class="text">钱包的转入时间限制：由于转入人数的不可预期，短暂会出现不能转入，提示“转入金额超出限制”的情况。</text>
+            <div class="title"><text class="icon-title"></text><text>保利钱包的本金转出是否有手续费？是否有次数限制？</text></div>
+            <text class="text">暂无手续费。</text>
+            <div class="title"><text class="icon-title"></text><text>保利钱包的本金转出后何时才能到达保利账户？</text></div>
+            <text class="text">保利钱包依托保利平台的大数据金融，进行有效灵活的资产配置策略，通过债权转让最大效率的撮合转入人资金去对应转出人的需求。2个工作日内，最快0秒到达投资者保利账户。</text>
+            <div class="title"><text class="icon-title"></text><text>保利钱包的收益在转出后何时才能到达保利账户？</text></div>
+            <text class="text">2016年8月30日开始实行转出的本金所对应的收益将随着本金成功转出后同时到达投资者保利账户。</text>
+            <div class="title"><text class="icon-title"></text><text>保利钱包的本金转出当天有收益么？</text></div>
+            <text class="text">保利钱包的本金转出当天有收益。</text>
+            <div class="title"><text class="icon-title"></text><text>钱放在保利钱包安全么？</text></div>
+            <text class="text">保利钱包严格遵守国家的法律法规，全程5重风险保障。数据存放在阿里巴巴云服务器。保利钱包的投资范围是一些高安全系数和稳定收益的有供应链贸易项目，属于风险较低的投资品种，从历史数据来看，收益稳定风险极小。</text>
+        </scroller>
+    </div>
+</template>
+<style>
+.content { position: absolute; top: 100px; left: 0; right: 0; background-color: #fff; padding: 40px; }
+.title { flex-direction: row; line-height: 60px; font-size: 32px; color: #333; margin-bottom: 20px; }
+.icon-title { width: 8px; height: 36px; background-color: #ff9125; margin-right: 16px; margin-top: 12px; }
+.text { font-size: 24px; line-height: 40px; color: #666; }
+</style>
+<script>
+require('../../../include/vbaoli-header.we');
+</script>
