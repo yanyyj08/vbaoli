@@ -1,0 +1,28 @@
+<template>
+    <div class="content">
+        <div class="p01">
+            <image class="img" src="/images/bank/icon-bank-{{icon}}.png"></image>
+            <div>
+                <text class="t01">{{bankName}}</text>
+                <text class="t02">银行卡号: {{cardNumber}}</text>
+                <text class="t02">开户行: {{bankAccount}}</text>
+            </div>
+        </div>
+        <div class="p02">
+            <text class="t02">删除银行卡</text>
+        </div>
+    </div>
+</template>
+<style>
+.content { border-radius: 8px; margin-top: 20px; margin-left: 20px; margin-right: 20px; padding-left: 20px; padding-right: 20px; width: 710px; background-color: #fff; }
+.p01 { flex-direction: row; height: 180px; padding-top: 20px; padding-bottom: 20px; border-bottom: 1px dotted #333; }
+.img { width: 90px; height: 90px; margin-top: 45px; margin-right: 20px; }
+.t01 { color: #666; font-size: 32px; line-height: 56px; }
+.t02 { color: #666; font-size: 28px; }
+.p02 { line-height: 50px; text-align: right; }
+</style>
+<script >
+module.exports = {
+    data: {},
+}
+</script>

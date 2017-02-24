@@ -1,0 +1,49 @@
+<template>
+    <div class="content">
+        <div class="p01 row" onclick="showDetails">
+            <div class="l01 row">
+                <image class="img01" src="/images/icon-message.png"></image>
+                <text class="t01">{{title}}</text>
+            </div>
+            <div class="l01 row">
+                <text class="t02">{{time}}</text>
+                <image class="img02" src="{{arrowImg}}"></image>
+            </div>
+        </div>
+        <div class="p02" style="display: {{display}}">
+            <text class="t03">{{detail}}</text>
+            <text class="t04">发送于:{{sendTime}}</text>
+        </div>
+    </div>
+</template>
+<style>
+.content { margin-top: 10px; background-color: #fff; }
+.row { flex-direction: row; }
+.p01 { justify-content: space-between; padding-left: 20px; padding-right: 20px; }
+.l01 { line-height: 100px; height: 100px; }
+.img01 { width: 40px; height: 40px; margin-top: 30px; margin-right: 20px; }
+.img02 { width: 25px; height: 15px; margin-top: 43px;  }
+.t01 { font-size: 28px; color: #666; }
+.t02 { font-size: 24px; color: #999; margin-right: 20px;}
+.t03 { padding-left: 80px; padding-right: 20px; line-height: 46px; font-size: 24px; color: #666; }
+.t04 { width: 710px; line-height: 34px; color: #666; font-size: 20px; text-align: right; }
+</style>
+<script >
+module.exports = {
+    data: {
+        arrowImg: '/images/icon-arrow-bottom.png',
+        display: 'none'
+    },
+    methods: {
+        showDetails: function() {
+            if (this.display == 'none') {
+                this.display = 'block';
+                this.arrowImg =  '/images/icon-arrow-top.png';
+            } else {
+                this.display = 'none';
+                this.arrowImg =  '/images/icon-arrow-bottom.png';
+            }
+        }
+    }
+}
+</script>

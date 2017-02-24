@@ -1,0 +1,40 @@
+<template>
+    <div class="content">
+        <div class="row p01">
+            <text class="t01">{{title}}</text>
+            <text class="t02">{{detail}}</text>
+        </div>
+        <div class="row p02">
+            <text class="t03">{{time}}</text>
+            <text class="t03">{{title}}</text>
+        </div>
+    </div>
+</template>
+<style>
+.content { margin-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; background-color: #fff; }
+.row { flex-direction: row; justify-content: space-between; }
+.p01 { height: 46px; line-height: 46px; }
+.p02 { height: 34px; line-height: 34px; }
+.t01 { font-size: 28px; color: #333; }
+.t02 { font-size: 28px; color: #509916; }
+.t03 { font-size: 24px; color: #999; }
+</style>
+<script >
+module.exports = {
+    data: {
+        arrowImg: '/images/icon-arrow-bottom.png',
+        display: 'none'
+    },
+    methods: {
+        showDetails: function() {
+            if (this.display == 'none') {
+                this.display = 'block';
+                this.arrowImg =  '/images/icon-arrow-top.png';
+            } else {
+                this.display = 'none';
+                this.arrowImg =  '/images/icon-arrow-bottom.png';
+            }
+        }
+    }
+}
+</script>

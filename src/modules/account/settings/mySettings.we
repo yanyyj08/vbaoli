@@ -1,0 +1,109 @@
+<template>
+    <div>
+        <vbaoli-header title="设置"></vbaoli-header>
+        <scroller class="content">
+            <div class="row p01">
+                <div class="row">
+                    <image style="width: 76px; height: 76px; margin-top: 18px;" src="icon-default-portrait.png"></image>
+                    <div style="margin-left: 28px; margin-top: 20px;">
+                        <text style="font-size: 24px; color: #999; line-height: 40px;">1111</text>
+                        <text style="font-size: 24px; color: #999; line-height: 32px;">11111111</text>
+                    </div>
+                </div>
+                <image class="icon-arrow" style="margin-top: 41px;" src="/images/icon-arrow-right.png"></image>
+            </div>
+            <div class="p02">
+                <div class="row line">
+                    <text class="t01">实名认证</text>
+                    <div class="row">
+                        <text class="t02">已认证</text>
+                    </div>
+                </div>
+                <div class="row line">
+                    <text class="t01">手机绑定</text>
+                    <div class="row">
+                        <text class="t02">已认证</text>
+                    </div>
+                </div>
+                <a class="row line last-line" href="{{baseUrl}}modules/account/settings/setBankCard.js">
+                    <text class="t01">我的银行卡</text>
+                    <div class="row">
+                        <text class="t02">已绑定</text>
+                        <image class="icon-arrow" src="/images/icon-arrow-right.png"></image>
+                    </div>
+                </a>
+            </div>
+            <div class="p02">
+                <a class="row line" href="{{baseUrl}}modules/account/settings/modifyRegisterPassword.js">
+                    <text class="t01">修改登录密码</text>
+                    <div class="row">
+                        <image class="icon-arrow" src="/images/icon-arrow-right.png"></image>
+                    </div>
+                </a>
+                <a class="row line last-line" href="{{baseUrl}}modules/account/settings/modifyPaymentPassword.js">
+                    <text class="t01">修改交易密码</text>
+                    <div class="row">
+                        <image class="icon-arrow" src="/images/icon-arrow-right.png"></image>
+                    </div>
+                </a>
+            </div>
+            <!--<div class="p02">-->
+                <!--<a class="row line last-line">-->
+                    <!--<text class="t01">修改通知方式</text>-->
+                    <!--<div class="row">-->
+                        <!--<image class="icon-arrow" src="/images/icon-arrow-right.png"></image>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</div>-->
+        </scroller>
+        <vbaoli-footer selected-index="3"></vbaoli-footer>
+    </div>
+
+</template>
+<style>
+.row { flex-direction: row; justify-content: space-between; }
+.p01 { margin-top: 10px; margin-bottom: 20px; padding-left: 20px; padding-right: 20px; line-height: 112px; height: 112px; background-color: #fff; }
+.p02 { margin-top: 10px; padding-left: 20px; background-color: #fff; }
+.line { justify-content: space-between; padding-right: 20px; line-height: 80px; height: 80px; border-bottom: 1px solid #ddd; }
+.t01 { font-size: 24px; color: #333; }
+.t02 { font-size: 24px; color: #999; }
+.icon-arrow { width: 20px; height: 30px; margin-top: 25px; margin-left: 10px; }
+</style>
+<script >
+require('../../../include/vbaoli-header.we');
+require('../../../include/vbaoli-footer.we');
+module.exports = {
+    data: {
+        dir: 'dist',
+        selectedIndex: 3,
+        baseUrl: ''
+    },
+    created: function() {
+        var bundleUrl = this.$getConfig().bundleUrl;
+        var nativeBase;
+        var isAndroidAssets = bundleUrl.indexOf('file://assets/') >= 0;
+        var isiOSAssets = bundleUrl.indexOf('file:///') >= 0 && bundleUrl.indexOf('WeexDemo.app') > 0;
+        if (isAndroidAssets) {
+            nativeBase = 'file://assets/';
+        } else if (isiOSAssets) {
+            // file:///var/mobile/Containers/Bundle/Application/{id}/WeexDemo.app/
+            // file:///Users/{user}/Library/Developer/CoreSimulator/Devices/{id}/data/Containers/Bundle/Application/{id}/WeexDemo.app/
+            nativeBase = bundleUrl.substring(0, bundleUrl.lastIndexOf('/') + 1);
+        } else {
+            var host = 'localhost:8080';
+            var matches = /\/\/([^\/]+?)\//.exec(this.$getConfig().bundleUrl);
+            if (matches && matches.length >= 2) {
+                host = matches[1];
+            }
+            nativeBase = 'http://' + host + '/' + this.dir + '/';
+        }
+        var h5Base = './index.html?page=./' + this.dir + '/';
+        // in Native
+        this.baseUrl = nativeBase;
+        if (typeof window === 'object') {
+            // in Browser or WebView
+            this.baseUrl = h5Base;
+        }
+    }
+}
+</script>

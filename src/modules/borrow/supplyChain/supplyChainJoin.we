@@ -1,10 +1,10 @@
 <template>
-    <scroll class="wrapper">
+    <div class="wrapper">
         <list>
             <header class="header">
-                <div class="header-text"><text>投资人</text></div>
-                <div class="header-text"><text>投资金额(元)</text></div>
-                <div class="header-text"><text>加入时间</text></div>
+                <text class="header-text">投资人</text>
+                <text class="header-text">投资金额(元)</text>
+                <text class="header-text">加入时间</text>
             </header>
             <cell class="cell">
                 <text class="cell-text">dfsa</text>
@@ -17,7 +17,7 @@
                 <text class="cell-text">2017-01-01</text>
             </cell>
         </list>
-    </scroll>
+    </div>
 </template>
 <style>
 .wrapper { width: 750px; background-color: #fff; }

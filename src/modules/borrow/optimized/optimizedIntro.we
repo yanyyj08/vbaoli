@@ -1,5 +1,5 @@
 <template>
-    <scroll class="wrapper">
+    <div class="wrapper">
         <div class="title"><text class="icon-title"></text><text>优选保利</text></div>
         <div class="rules"><text class="rules-text">优选保利是华联保利网推出的自动分散投资和自动转让退出的投资计划，华联保利网对借款项目的资产保障严格审核，为投资人进行分散投资和定期赎回，提高小额分散投资的效率，满足投资人多样化的理财需求。该产品适用于华联保利网风险金保障计划。</text></div>
         <div class="title"><text class="icon-title"></text><text>优选保利的优势</text></div>
@@ -18,7 +18,7 @@
             <text class="rules-text">5.借款到期后系统为客户自动转让退出，支付本息给投资人。</text>
         </div>
         <image src="/images/optimized-pic04.png" style="margin-left: 8px; width: 654px; height: 496px;"></image>
-    </scroll>
+    </div>
 </template>
 <style>
     .wrapper { padding: 40px; width: 750px; background-color: #fff; }

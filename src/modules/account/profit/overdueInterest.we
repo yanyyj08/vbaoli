@@ -2,7 +2,7 @@
     <div>
         <scroller class="content">
             <div>
-                <privilege-list list-item="{{listItem}}" redpackage="{{redpackage}}"></privilege-list>
+                <interest-item repeat="{{listItem}}"></interest-item>
             </div>
         </scroller>
     </div>
@@ -11,12 +11,11 @@
 .content { min-height: 10px; }
 </style>
 <script>
-require('../../../include/privilege-list.we');
+require('../../../include/interest-item.we');
 module.exports = {
     data: {
         selectIndex: 1,
-        listItem: [],
-        redpackage: false
+        listItem: []
     },
     created: function() {
         this.listItem = [

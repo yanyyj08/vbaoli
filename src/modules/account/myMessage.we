@@ -1,3 +1,36 @@
 <template>
-    <div></div>
+    <div>
+        <vbaoli-header title="消息中心"></vbaoli-header>
+        <scroller class="content">
+            <vbaoli-message repeat="{{listItem}}"></vbaoli-message>
+        </scroller>
+        <vbaoli-footer selectedIndex="3"></vbaoli-footer>
+    </div>
 </template>
+<style>
+.content { position: absolute; top: 100px; bottom: 100px; left: 0; right: 0; }
+</style>
+<script >
+require('../../include/vbaoli-header.we');
+require('../../include/vbaoli-footer.we');
+require('../../include/vbaoli-message.we');
+module.exports = {
+    data: {
+        listItem: []
+    },
+    created: function() {
+        this.listItem = [
+            { title: '钱包收益', sendTime: '2017-02-11 00:00:00', time: '2017/02/11', detail: '钱包昨日收益已生息，昨日收益为[0.03]元'},
+            { title: '钱包收益', sendTime: '2017-02-11 00:00:00', time: '2017/02/11', detail: '钱包昨日收益已生息，昨日收益为[0.03]元'},
+            { title: '钱包收益', sendTime: '2017-02-11 00:00:00', time: '2017/02/11', detail: '钱包昨日收益已生息，昨日收益为[0.03]元'},
+            { title: '钱包收益', sendTime: '2017-02-11 00:00:00', time: '2017/02/11', detail: '钱包昨日收益已生息，昨日收益为[0.03]元'},
+            { title: '钱包收益', sendTime: '2017-02-11 00:00:00', time: '2017/02/11', detail: '钱包昨日收益已生息，昨日收益为[0.03]元'},
+            { title: '钱包收益', sendTime: '2017-02-11 00:00:00', time: '2017/02/11', detail: '钱包昨日收益已生息，昨日收益为[0.03]元'},
+            { title: '钱包收益', sendTime: '2017-02-11 00:00:00', time: '2017/02/11', detail: '钱包昨日收益已生息，昨日收益为[0.03]元'},
+            { title: '钱包收益', sendTime: '2017-02-11 00:00:00', time: '2017/02/11', detail: '钱包昨日收益已生息，昨日收益为[0.03]元'},
+            { title: '钱包收益', sendTime: '2017-02-11 00:00:00', time: '2017/02/11', detail: '钱包昨日收益已生息，昨日收益为[0.03]元'},
+            { title: '钱包收益', sendTime: '2017-02-11 00:00:00', time: '2017/02/11', detail: '钱包昨日收益已生息，昨日收益为[0.03]元'},
+        ]
+    }
+}
+</script>

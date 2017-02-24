@@ -1,16 +1,16 @@
 <template>
     <div class="wrapper">
         <vbaoli-header title="{{productName}}"></vbaoli-header>
-        <scroller class="content">
+        <div class="content">
             <div class="p01">
                 <div class="l01"><text style="color: #ff9125; font-size: 24px; justify-content: center;">{{productName}}</text><text style="color: #999; font-size: 24px;">{{productTime}}</text></div>
                 <div class="l02">
                     <div class="l02-part">
-                        <div style="flex-direction: row; align-items: flex-end; color: #ff6531;"><text style="font-size: 78px;">15.0</text><text style="font-size: 24px;">%</text></div>
+                        <div style="flex-direction: row; color: #ff6531;"><text style="font-size: 78px;">15.0</text><text style="font-size: 24px; margin-top: 56px;">%</text></div>
                         <text class="base-font" style="margin-top: 18px;">预期年收益</text>
                     </div>
                     <div class="l02-part">
-                        <div style="flex-direction: row; align-items: flex-end; color: #333;"><text style="font-size: 78px;">12</text><text style="font-size: 24px;">个月</text></div>
+                        <div style="flex-direction: row; color: #333;"><text style="font-size: 78px;">12</text><text style="font-size: 24px; margin-top: 56px;">个月</text></div>
                         <text class="base-font" style="margin-top: 12px;">期限</text>
                     </div>
                 </div>
@@ -35,11 +35,10 @@
             <div class="p03">
                 <embed class="embed" src="{{src}}" type="weex"></embed>
             </div>
-            <div class="p04">
-                <a class="invest-btn" href="{{baseUrl}}/index.html?page=./{{dir}}/modules/borrow/invest.js"><text class="invest-btn-text">立即投资</text></a>
+            <div class="footer">
+                <a class="btn" href="{{baseUrl}}/index.html?page=./{{dir}}/modules/borrow/invest.js"><text class="btn-text">立即投资</text></a>
             </div>
-        </scroller>
-        <vbaoli-footer selected-index="{{selectedIndex}}"></vbaoli-footer>
+        </div>
     </div>
 </template>
 <style>
@@ -57,11 +56,10 @@
 .p02 { margin-top: 20px; padding-top: 40px; padding-bottom: 40px; padding-left: 40px; padding-right: 40px; background-color: #fff; flex-direction: row; justify-content: space-between; align-items: center; }
 .p02-part { width: 170px; height: 60px; line-height: 60px; color: #fff; font-size: 24px; text-align: center; border-radius: 4px; background-color: #ff9125; }
 .dot { width: 84px; height: 2px; }
-.p03 { min-height: 100px; }
-/*.embed { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }*/
-.p04 { padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; background-color: #fff; border-top-width: 1px; border-top-style: solid; border-top-color: #ddd; border-radius: 8px; }
-.invest-btn { width: 710px; height: 86px; text-align: center; background-color: #ff9125; }
-.invest-btn-text {line-height: 86px; color: #fff; font-size: 32px; text-align: center; }
+.p03 { margin-top: 20px; min-height: 100px; }
+.footer { padding: 20px; background-color: #fff; border-top: 1px solid #ddd; }
+.btn { width: 710px; height: 76px; text-align: center; background-color: #ff9125; border-radius: 8px; }
+.btn-text {line-height: 76px; color: #fff; font-size: 32px; text-align: center; }
 </style>
 <script>
 require('weex-components');

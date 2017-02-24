@@ -1,3 +1,35 @@
 <template>
-    <div></div>
+    <div>
+        <vbaoli-header title="消息中心"></vbaoli-header>
+        <scroller class="content">
+            <div class="p01"><text class="t01">名称/交易时间</text><text class="t01">交易金额(元)</text></div>
+            <vbaoli-record repeat="{{listItem}}"></vbaoli-record>
+        </scroller>
+        <vbaoli-footer selectedIndex="3"></vbaoli-footer>
+    </div>
 </template>
+<style>
+.content { position: absolute; top: 100px; bottom: 100px; left: 0; right: 0; }
+.p01 { flex-direction: row; justify-content: space-between; padding-left: 20px; padding-right: 20px; height: 64px; line-height: 64px; }
+.t01 { font-size: 28px; color: #333; }
+</style>
+<script >
+require('../../include/vbaoli-header.we');
+require('../../include/vbaoli-footer.we');
+require('../../include/vbaoli-record.we');
+module.exports = {
+    data: {
+        listItem: []
+    },
+    created: function() {
+        this.listItem = [
+            { title: '回款成功', time: '2017-02-11 00:00:00', detail: '10.00'},
+            { title: '回款成功', time: '2017-02-11 00:00:00', detail: '10.00'},
+            { title: '回款成功', time: '2017-02-11 00:00:00', detail: '10.00'},
+            { title: '回款成功', time: '2017-02-11 00:00:00', detail: '10.00'},
+            { title: '回款成功', time: '2017-02-11 00:00:00', detail: '10.00'},
+            { title: '回款成功', time: '2017-02-11 00:00:00', detail: '10.00'},
+        ]
+    }
+}
+</script>

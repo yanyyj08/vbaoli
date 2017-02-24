@@ -1,0 +1,45 @@
+<template>
+    <div class="wrapper">
+        <vbaoli-header title="绑定银行卡"></vbaoli-header>
+        <div class="content">
+            <div class="row">
+                <text class="t01">姓名</text>
+                <text class="t02">这里是名字</text>
+            </div>
+            <div class="row">
+                <text class="t01">开户行</text>
+                <text class="t02"></text>
+            </div>
+            <div class="row">
+                <text class="t01">开户城市</text>
+                <div>
+                    <select class="select" name="" id="">
+                        <option value="">--请选择--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <text class="t01">开户支行</text>
+                <input type="text" class="ipt">
+            </div>
+            <div class="row">
+                <text class="t01">银行卡</text>
+                <input type="text" class="ipt">
+            </div>
+            <div class="btn"><text class="t03">确定</text></div>
+        </div>
+    </div>
+</template>
+<style>
+.wrapper { width: 750px; }
+.content { padding-top: 20px; padding-left: 20px; padding-right: 20px; }
+.row { flex-direction: row; padding-left: 10px; padding-left: 10px; line-height: 70px; background-color: #fff; border-radius: 4px; }
+.t01 { width: 154px; font-size: 28px; color: #999; }
+.t02 { font-size: 28px; color: #333; }
+.t03 { color: #fff; font-size: 28px; }
+.ipt { width: 536px; }
+.btn { margin-top: 60px; width: 710px; margin-left: 20px; height: 76px; line-height: 76px; background-color: #ff9125; text-align: center; border-radius: 8px; }
+</style>
+<script >
+require('../../../../include/vbaoli-header.we');
+</script>

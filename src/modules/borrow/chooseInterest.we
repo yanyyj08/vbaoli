@@ -2,9 +2,8 @@
     <div>
         <vbaoli-header title="我的加息券"></vbaoli-header>
         <scroller class="content">
-            <privilege-list list-item="{{listItem}}" redpackage="{{redpackage}}"></privilege-list>
+            <interest-item repeat="{{listItem}}"></interest-item>
         </scroller>
-        <vbaoli-footer select-index="{{selectIndex}}"></vbaoli-footer>
     </div>
 </template>
 <style>
@@ -13,12 +12,11 @@
 <script>
 require('../../include/vbaoli-footer.we');
 require('../../include/vbaoli-header.we');
-require('../../include/privilege-list.we');
+require('../../include/interest-item.we');
 module.exports = {
     data: {
         selectIndex: 1,
-        listItem: [],
-        redpackage: false
+        listItem: []
     },
     created: function() {
         this.listItem = [

@@ -6,7 +6,7 @@
     </div>
 </template>
 <style>
-.wrapper { width: 750px; }
+.wrapper { width: 750px; overflow: scroll; -webkit-overflow-scrolling: touch; }
 </style>
 <script>
 require('weex-components');
